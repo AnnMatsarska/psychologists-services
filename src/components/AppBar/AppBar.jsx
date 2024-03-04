@@ -3,9 +3,9 @@ import { Navigation } from 'components/Navigation/Navigation';
 export const AppBar = () => {
   return (
     <header>
-      <container>
+      <div>
         <Navigation />
-      </container>
+      </div>
     </header>
   );
 };
