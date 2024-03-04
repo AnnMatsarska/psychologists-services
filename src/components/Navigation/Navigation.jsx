@@ -15,10 +15,10 @@ export const Navigation = () => {
             <NavLink to="/favorites">Favorites</NavLink>
           </li>
           <li>
-            <NavLink to="/register">Log In</NavLink>
+            <NavLink to="/login">Log In</NavLink>
           </li>
           <li>
-            <NavLink to="/login">Registration</NavLink>
+            <NavLink to="/register">Registration</NavLink>
           </li>
         </ul>
       </nav>
