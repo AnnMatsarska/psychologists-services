@@ -4,25 +4,23 @@ import css from './Navigation.module.css';
 export const Navigation = () => {
   return (
     <>
-      <nav>
-        <ul className={css.list}>
-          <li>
-            <NavLink to="/">Home</NavLink>
-          </li>
-          <li>
-            <NavLink to="/psychologists">Psychologists</NavLink>
-          </li>
-          <li>
-            <NavLink to="/favorites">Favorites</NavLink>
-          </li>
-          <li>
-            <NavLink to="/login">Log In</NavLink>
-          </li>
-          <li>
-            <NavLink to="/register">Registration</NavLink>
-          </li>
-        </ul>
-      </nav>
+      <ul className={css.list}>
+        <li>
+          <NavLink to="/" className={css.linkItem}>
+            Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/psychologists" className={css.linkItem}>
+            Psychologists
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/favorites" className={css.linkItem}>
+            Favorites
+          </NavLink>
+        </li>
+      </ul>
     </>
   );
 };

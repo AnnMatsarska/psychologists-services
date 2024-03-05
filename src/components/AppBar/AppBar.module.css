@@ -1,27 +1,29 @@
 .header {
-    position: absolute;
+    /* position: absolute; */
     width: 100%;
 }
 
 .container {
     margin: 0 auto;
     max-width: 1440px;
-    padding: 24px 128px;
-    border: 1px red solid;
+    padding: 36px 128px;
+    border-bottom: 1px solid rgba(25, 26, 21, 0.1);
 }
 
 .logoText {
     font-weight: 600;
     font-size: 20px;
-    letter-spacing: -2%;
     line-height: 1.2;
     color: var(--secondary-color-black)
 }
 
 .logoSpan {
     font-weight: 700;
-    font-size: 20px;
-    letter-spacing: -2%;
-    line-height: 1.2;
     color: var(--primary-color-green);
+}
+
+.navWrapper {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
 }
