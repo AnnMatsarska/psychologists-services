@@ -9,3 +9,19 @@
     padding: 24px 128px;
     border: 1px red solid;
 }
+
+.logoText {
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: -2%;
+    line-height: 1.2;
+    color: var(--secondary-color-black)
+}
+
+.logoSpan {
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: -2%;
+    line-height: 1.2;
+    color: var(--primary-color-green);
+}
