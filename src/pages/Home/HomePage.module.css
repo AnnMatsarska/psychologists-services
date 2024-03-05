@@ -61,6 +61,32 @@
     margin-right: 18px;
 }
 
+.violetSpan {
+    position: absolute;
+    /* padding: 17px 2px; */
+    width: 40px;
+    height: 40px;
+    left: 815px;
+    top: 369.35px;
+    transform: rotate(-15.00deg);
+    border-radius: 10px;
+    background: rgb(69, 53, 175);
+}
+
+.iconQuestion {
+    position: absolute;
+    transform: rotate(15.00deg);
+    top: 30%;
+    left: 36%
+}
+
+.groupSpan {
+    position: absolute;
+    left: 1295px;
+    top: 212px;
+
+}
+
 .greenWrapper {
     position: absolute;
     top: 68%;
@@ -74,7 +100,6 @@
 }
 
 .iconWrapper {
-    /* position: absolute; */
     padding: 19.5px 17px;
     width: 54px;
     height: 54px;

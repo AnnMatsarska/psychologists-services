@@ -2,6 +2,8 @@ import homeImg from '../../images/home-image-min.png';
 import css from './HomePage.module.css';
 import { ReactComponent as Arrow } from '../../images/arrow.svg';
 import { ReactComponent as Check } from '../../images/check.svg';
+import { ReactComponent as Question } from '../../images/question.svg';
+import { ReactComponent as Group } from '../../images/group.svg';
 import { NavLink } from 'react-router-dom';
 
 const HomePage = () => {
@@ -22,18 +24,22 @@ const HomePage = () => {
             <span className={css.buttonSpan}>Get started</span> <Arrow />
           </NavLink>
         </div>
-        <div>
-          <div className={css.greenWrapper}>
-            <div className={css.iconWrapper}>
-              <Check />
-            </div>
-            <div>
-              <p className={css.greenWrText}>Experienced psychologists</p>
-              <p className={css.greenWrNumber}>15,000</p>
-            </div>
+        <span className={css.groupSpan}>
+          <Group />
+        </span>
+        <span className={css.violetSpan}>
+          <Question className={css.iconQuestion} />
+        </span>
+        <div className={css.greenWrapper}>
+          <div className={css.iconWrapper}>
+            <Check />
           </div>
-          <img src={homeImg} className={css.homeImg} alt="home img"></img>
+          <div>
+            <p className={css.greenWrText}>Experienced psychologists</p>
+            <p className={css.greenWrNumber}>15,000</p>
+          </div>
         </div>
+        <img src={homeImg} className={css.homeImg} alt="home img"></img>
       </section>
     </div>
   );
