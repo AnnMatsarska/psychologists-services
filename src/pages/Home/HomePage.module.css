@@ -1,0 +1,50 @@
+.section {
+    display: flex;
+    gap: 125px;
+    padding-top: 78px;
+}
+
+.sectionTitle {
+    width: 595px;
+    margin-bottom: 20px;
+    font-size: 80px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.sectionText {
+    width: 510px;
+    margin-bottom: 40px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.spanText {
+    font-style: italic;
+    color: var(--primary-color-green);
+}
+
+.homeImg {
+    border-radius: 10px;
+    width: 464px;
+    height: 526px;
+}
+
+.button {
+    padding: 18px 50px;
+    cursor: pointer;
+    border: none;
+    border-radius: 30px;
+    background-color: var(--primary-color-green);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--secondary-color-white);
+    transition: all 300ms;
+}
+
+.button:hover,
+.button:focus {
+    background-color: var(--secondary-color-green);
+}
