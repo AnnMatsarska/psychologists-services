@@ -1,0 +1,11 @@
+.header {
+    position: absolute;
+    width: 100%;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1440px;
+    padding: 24px 128px;
+    border: 1px red solid;
+}
