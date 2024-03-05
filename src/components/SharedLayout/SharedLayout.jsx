@@ -7,14 +7,14 @@ import css from './SharedLayout.module.css';
 export const SharedLayout = () => {
   return (
     <>
-      <AppBar />
-      <main>
-        <div className={css.container}>
+      <div className={css.layout}>
+        <AppBar />
+        <main>
           <Suspense fallback={<Loader />}>
             <Outlet />
           </Suspense>
-        </div>
-      </main>
+        </main>
+      </div>
     </>
   );
 };

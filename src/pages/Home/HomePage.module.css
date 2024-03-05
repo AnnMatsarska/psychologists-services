@@ -4,6 +4,14 @@
     padding-top: 78px;
 }
 
+.container {
+    margin: 0 auto;
+    max-width: 1440px;
+    padding: 0px 128px;
+    background: linear-gradient(to top left, var(--primary-color-green), #ffffff 50%);
+    height: calc(100vh - 97px);
+}
+
 .sectionTitle {
     width: 595px;
     margin-bottom: 20px;
@@ -47,4 +55,44 @@
 .button:hover,
 .button:focus {
     background-color: var(--secondary-color-green);
+}
+
+.buttonSpan {
+    margin-right: 18px;
+}
+
+.greenWrapper {
+    position: absolute;
+    top: 68%;
+    right: 26%;
+    display: flex;
+    gap: 16px;
+    padding: 32px;
+    width: 312px;
+    border-radius: 20px;
+    background-color: var(--primary-color-green);
+}
+
+.iconWrapper {
+    /* position: absolute; */
+    padding: 19.5px 17px;
+    width: 54px;
+    height: 54px;
+    border-radius: 13px;
+    background-color: var(--secondary-color-white);
+}
+
+.greenWrText {
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: rgba(251, 251, 251, 0.5);
+}
+
+.greenWrNumber {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--secondary-color-white);
 }
