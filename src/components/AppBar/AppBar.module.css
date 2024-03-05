@@ -6,7 +6,7 @@
 .container {
     margin: 0 auto;
     max-width: 1440px;
-    padding: 36px 128px;
+    padding: 24px 128px;
     border-bottom: 1px solid rgba(25, 26, 21, 0.1);
 }
 

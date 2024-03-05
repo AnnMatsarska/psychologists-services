@@ -9,7 +9,7 @@
     max-width: 1440px;
     padding: 0px 128px;
     background: linear-gradient(to top left, var(--primary-color-green), #ffffff 50%);
-    height: calc(100vh - 97px);
+    height: calc(100vh - 99px);
 }
 
 .sectionTitle {
@@ -63,7 +63,6 @@
 
 .violetSpan {
     position: absolute;
-    /* padding: 17px 2px; */
     width: 40px;
     height: 40px;
     left: 815px;
