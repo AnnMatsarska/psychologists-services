@@ -5,8 +5,10 @@
 
 .linkItem {
     padding: 14px 39px;
+    background-color: transparent;
     border: 1px solid rgba(25, 26, 21, 0.2);
     border-radius: 30px;
+    cursor: pointer;
     font-size: 16px;
     font-weight: 500;
     line-height: 1.25;

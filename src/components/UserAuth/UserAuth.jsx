@@ -1,19 +1,35 @@
-import { NavLink } from 'react-router-dom';
+import { useState } from 'react';
 import css from './UserAuth.module.css';
 
 export const UserAuth = () => {
-  const setAtive = ({ isActive }) => (isActive ? css.active : css.linkItem);
+  const [activeButton, setActiveButton] = useState(null);
+
+  const handleButtonClick = button => {
+    setActiveButton(button);
+  };
   return (
     <ul className={css.list}>
       <li>
-        <NavLink to="/login" className={setAtive}>
+        <button
+          type="button"
+          className={`${css.linkItem} ${
+            activeButton === 'login' ? css.active : css.linkItem
+          }`}
+          onClick={() => handleButtonClick('login')}
+        >
           Log In
-        </NavLink>
+        </button>
       </li>
       <li>
-        <NavLink to="/register" className={setAtive}>
+        <button
+          type="button"
+          className={`${css.linkItem} ${
+            activeButton === 'registration' ? css.active : css.linkItem
+          }`}
+          onClick={() => handleButtonClick('registration')}
+        >
           Registration
-        </NavLink>
+        </button>
       </li>
     </ul>
   );
