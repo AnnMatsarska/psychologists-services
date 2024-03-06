@@ -46,7 +46,9 @@ export const UserAuth = () => {
       </ul>
       {isOpen && (
         <Modal onClose={closeModal}>
-          <AuthForm />
+          <AuthForm
+            formTitle={activeButton === 'login' ? 'Log In' : 'Registration'}
+          />
         </Modal>
       )}
     </>
