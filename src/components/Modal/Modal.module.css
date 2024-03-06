@@ -45,13 +45,11 @@
     border: none;
     background-color: transparent;
     scale: 1;
+    transition: all 300ms;
 }
 
 .btnClose:hover,
 .btnClose:hover {
+    cursor: pointer;
     scale: 1.1;
-}
-
-.content {
-    margin-top: 24px;
 }

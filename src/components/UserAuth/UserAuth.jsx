@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import css from './UserAuth.module.css';
 import Modal from 'components/Modal/Modal';
+import { AuthForm } from 'components/AuthForm/AuthForm';
 
 export const UserAuth = () => {
   const [activeButton, setActiveButton] = useState(null);
@@ -43,7 +44,11 @@ export const UserAuth = () => {
           </button>
         </li>
       </ul>
-      {isOpen && <Modal onClose={closeModal}></Modal>}
+      {isOpen && (
+        <Modal onClose={closeModal}>
+          <AuthForm />
+        </Modal>
+      )}
     </>
   );
 };

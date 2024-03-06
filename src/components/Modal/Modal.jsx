@@ -42,7 +42,7 @@ const Modal = ({ children, onClose }) => {
           <button className={css.btnClose} onClick={() => onClose(false)}>
             <img src={closeIcon} width={32} alt="Close" />
           </button>
-          <div className={css.content}>{children}</div>
+          <div>{children}</div>
         </div>
       </div>
     </div>,
