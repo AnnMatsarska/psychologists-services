@@ -75,9 +75,15 @@ export const AuthForm = ({ formTitle }) => {
             </label>
             <ErrorMessage name="password" />
           </div>
-          <button type="submit" className={css.buttonForm}>
-            Log In
-          </button>
+          {formTitle === 'Registration' ? (
+            <button type="submit" className={css.buttonForm}>
+              Sign Up
+            </button>
+          ) : (
+            <button type="submit" className={css.buttonForm}>
+              Log In
+            </button>
+          )}
         </Form>
       </Formik>
     </div>
