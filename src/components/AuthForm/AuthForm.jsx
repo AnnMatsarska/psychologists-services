@@ -87,7 +87,11 @@ export const AuthForm = ({ formTitle }) => {
                 {showPassword ? <OpenEye /> : <ClosedEye />}
               </div>
             </div>
-            <ErrorMessage name="password" />
+            <ErrorMessage
+              name="password"
+              component="div"
+              className={css.errormessage}
+            />
           </div>
           {formTitle === 'Registration' ? (
             <button type="submit" className={css.buttonForm}>
