@@ -1,8 +1,13 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import css from './AuthForm.module.css';
+import { ReactComponent as OpenEye } from '../../images/eye.svg';
+import { ReactComponent as ClosedEye } from '../../images/eye-off.svg';
+import { useState } from 'react';
 
 export const AuthForm = ({ formTitle }) => {
+  const [showPassword, setShowPassword] = useState(false);
+
   const loginSchema = yup.object({
     ...(formTitle === `Registration` && {
       name: yup.string().required(),
@@ -42,19 +47,17 @@ export const AuthForm = ({ formTitle }) => {
           <div className={css.formWrapper}>
             {formTitle === 'Registration' && (
               <>
-                <label htmlFor="name">
-                  <Field
-                    id="name"
-                    type="name"
-                    name="name"
-                    placeholder="Name"
-                    className={css.input}
-                  />
-                </label>
+                <Field
+                  id="name"
+                  type="name"
+                  name="name"
+                  placeholder="Name"
+                  className={css.input}
+                />
                 <ErrorMessage name="name" />
               </>
             )}
-            <label htmlFor="email">
+            <div className={css.passInputWtapper}>
               <Field
                 id="email"
                 type="email"
@@ -62,17 +65,28 @@ export const AuthForm = ({ formTitle }) => {
                 placeholder="Email"
                 className={css.input}
               />
-            </label>
+            </div>
             <ErrorMessage name="email" />
-            <label htmlFor="password">
+            <div className={css.passInputWtapper}>
               <Field
                 id="password"
-                type="text"
+                type={showPassword ? 'text' : 'password'}
                 name="password"
                 placeholder="Password"
                 className={css.input}
               />
-            </label>
+              <div
+                className={css.eyeIcon}
+                onClick={() => setShowPassword(!showPassword)}
+                style={{
+                  cursor: 'pointer',
+                  marginTop: 'auto',
+                  marginBottom: 'auto',
+                }}
+              >
+                {showPassword ? <OpenEye /> : <ClosedEye />}
+              </div>
+            </div>
             <ErrorMessage name="password" />
           </div>
           {formTitle === 'Registration' ? (
