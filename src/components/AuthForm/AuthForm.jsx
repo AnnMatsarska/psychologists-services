@@ -15,6 +15,7 @@ export const AuthForm = ({ formTitle }) => {
     email: yup.string().email().required(),
     password: yup.string().min(6).max(10).required(),
   });
+
   const initialValues = {
     ...(formTitle === `Registration` && {
       name: '',
@@ -22,6 +23,12 @@ export const AuthForm = ({ formTitle }) => {
     email: '',
     password: '',
   };
+
+  const handleSubmit = async (values, { resetForm }) => {
+    console.log(values);
+    resetForm();
+  };
+
   return (
     <div className={css.formDiv}>
       <h2 className={css.formTitle}>{formTitle}</h2>
@@ -41,7 +48,7 @@ export const AuthForm = ({ formTitle }) => {
       <Formik
         initialValues={initialValues}
         validationSchema={loginSchema}
-        //    onSubmit={}
+        onSubmit={handleSubmit}
       >
         {({ errors, touched }) => (
           <Form>
