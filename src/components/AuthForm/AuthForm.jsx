@@ -43,66 +43,96 @@ export const AuthForm = ({ formTitle }) => {
         validationSchema={loginSchema}
         //    onSubmit={}
       >
-        <Form>
-          <div className={css.formWrapper}>
-            {formTitle === 'Registration' && (
-              <>
-                <Field
-                  id="name"
-                  type="name"
-                  name="name"
-                  placeholder="Name"
-                  className={css.input}
+        {({ errors, touched }) => (
+          <Form>
+            <div className={css.formWrapper}>
+              {formTitle === 'Registration' && (
+                <>
+                  <div className={css.wrapper}>
+                    <div
+                      className={`${css.inputWrapper} ${
+                        errors.email && touched.email ? css.inputError : ''
+                      }`}
+                    >
+                      <Field
+                        id="name"
+                        type="name"
+                        name="name"
+                        placeholder="Name"
+                        className={css.input}
+                      />
+                    </div>
+                    <ErrorMessage
+                      name="name"
+                      component="div"
+                      className={css.errormessage}
+                    />
+                  </div>
+                </>
+              )}
+              <div className={css.wrapper}>
+                <div
+                  className={`${css.inputWrapper} ${
+                    errors.email && touched.email ? css.inputError : ''
+                  }`}
+                >
+                  <Field
+                    id="email"
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    className={css.input}
+                  />
+                </div>
+                <ErrorMessage
+                  name="email"
+                  component="div"
+                  className={css.errormessage}
                 />
-                <ErrorMessage name="name" />
-              </>
-            )}
-            <div className={css.passInputWtapper}>
-              <Field
-                id="email"
-                type="email"
-                name="email"
-                placeholder="Email"
-                className={css.input}
-              />
-            </div>
-            <ErrorMessage name="email" />
-            <div className={css.passInputWtapper}>
-              <Field
-                id="password"
-                type={showPassword ? 'text' : 'password'}
-                name="password"
-                placeholder="Password"
-                className={css.input}
-              />
-              <div
-                className={css.eyeIcon}
-                onClick={() => setShowPassword(!showPassword)}
-                style={{
-                  cursor: 'pointer',
-                  marginTop: 'auto',
-                  marginBottom: 'auto',
-                }}
-              >
-                {showPassword ? <OpenEye /> : <ClosedEye />}
+              </div>
+              <div className={css.wrapper}>
+                <div
+                  className={`${css.inputWrapper} ${
+                    errors.email && touched.email ? css.inputError : ''
+                  }`}
+                >
+                  <Field
+                    id="password"
+                    type={showPassword ? 'text' : 'password'}
+                    name="password"
+                    placeholder="Password"
+                    className={css.input}
+                  />
+                  <div
+                    className={css.eyeIcon}
+                    onClick={() => setShowPassword(!showPassword)}
+                    style={{
+                      cursor: 'pointer',
+                      marginTop: 'auto',
+                      marginBottom: 'auto',
+                    }}
+                  >
+                    {showPassword ? <OpenEye /> : <ClosedEye />}
+                  </div>
+                </div>
+                <ErrorMessage
+                  name="password"
+                  component="div"
+                  className={css.errormessage}
+                />
               </div>
             </div>
-            <ErrorMessage
-              name="password"
-              component="div"
-              className={css.errormessage}
-            />
-          </div>
-          {formTitle === 'Registration' ? (
-            <button type="submit" className={css.buttonForm}>
-              Sign Up
-            </button>
-          ) : (
-            <button type="submit" className={css.buttonForm}>
-              Log In
-            </button>
-          )}
-        </Form>
+            {formTitle === 'Registration' ? (
+              <button type="submit" className={css.buttonForm}>
+                Sign Up
+              </button>
+            ) : (
+              <button type="submit" className={css.buttonForm}>
+                Log In
+              </button>
+            )}
+          </Form>
+        )}
       </Formik>
     </div>
   );
