@@ -1,0 +1,10 @@
+.section {
+    padding-top: 64px;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1440px;
+    padding: 0px 128px;
+    /* border: 1px solid red; */
+}

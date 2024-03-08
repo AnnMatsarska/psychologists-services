@@ -1,5 +1,11 @@
+import { PsychologistList } from '../../components/PsychologistList/PsychologistList';
+
 const PsychologistPage = () => {
-  return <p>PsychologistPage</p>;
+  return (
+    <>
+      <PsychologistList />
+    </>
+  );
 };
 
 export default PsychologistPage;
