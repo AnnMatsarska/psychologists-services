@@ -1,9 +1,16 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
+
 import css from './AuthForm.module.css';
 import { ReactComponent as OpenEye } from '../../images/eye.svg';
 import { ReactComponent as ClosedEye } from '../../images/eye-off.svg';
+
 import { useState } from 'react';
+import { auth } from '../../services/firebase/config';
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from 'firebase/auth';
 
 export const AuthForm = ({ formTitle }) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -25,7 +32,30 @@ export const AuthForm = ({ formTitle }) => {
   };
 
   const handleSubmit = async (values, { resetForm }) => {
-    console.log(values);
+    try {
+      if (formTitle === 'Registration') {
+        const userCredential = await createUserWithEmailAndPassword(
+          auth,
+          values.email,
+          values.password
+        );
+        const user = userCredential.user;
+        // console.log(user);
+      } else {
+        const userCredential = await signInWithEmailAndPassword(
+          auth,
+          values.email,
+          values.password
+        );
+        const user = userCredential.user;
+        // console.log(user);
+      }
+    } catch (error) {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.error('Authentication error:', errorCode, errorMessage);
+    }
+
     resetForm();
   };
 
@@ -50,7 +80,7 @@ export const AuthForm = ({ formTitle }) => {
         validationSchema={loginSchema}
         onSubmit={handleSubmit}
       >
-        {({ errors, touched }) => (
+        {({ errors, touched, values, handleChange }) => (
           <Form>
             <div className={css.formWrapper}>
               {formTitle === 'Registration' && (
@@ -63,8 +93,12 @@ export const AuthForm = ({ formTitle }) => {
                     >
                       <Field
                         id="name"
+                        onChange={e => {
+                          handleChange(e);
+                        }}
                         type="name"
                         name="name"
+                        value={values.name}
                         placeholder="Name"
                         className={css.input}
                       />
@@ -85,8 +119,12 @@ export const AuthForm = ({ formTitle }) => {
                 >
                   <Field
                     id="email"
+                    onChange={e => {
+                      handleChange(e);
+                    }}
                     type="email"
                     name="email"
+                    value={values.email}
                     placeholder="Email"
                     className={css.input}
                   />
@@ -105,8 +143,12 @@ export const AuthForm = ({ formTitle }) => {
                 >
                   <Field
                     id="password"
+                    onChange={e => {
+                      handleChange(e);
+                    }}
                     type={showPassword ? 'text' : 'password'}
                     name="password"
+                    value={values.password}
                     placeholder="Password"
                     className={css.input}
                   />

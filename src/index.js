@@ -6,9 +6,9 @@ import './fonts.css';
 import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <BrowserRouter basename="/psychologists-services">
-      <App />
-    </BrowserRouter>
-  </React.StrictMode>
+  // <React.StrictMode>
+  <BrowserRouter basename="/psychologists-services">
+    <App />
+  </BrowserRouter>
+  // </React.StrictMode>
 );
