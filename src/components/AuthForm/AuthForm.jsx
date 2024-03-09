@@ -40,7 +40,7 @@ export const AuthForm = ({ formTitle }) => {
           values.password
         );
         const user = userCredential.user;
-        // console.log(user);
+        console.log(user);
       } else {
         const userCredential = await signInWithEmailAndPassword(
           auth,
@@ -48,7 +48,7 @@ export const AuthForm = ({ formTitle }) => {
           values.password
         );
         const user = userCredential.user;
-        // console.log(user);
+        console.log(user);
       }
     } catch (error) {
       const errorCode = error.code;
