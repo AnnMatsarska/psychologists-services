@@ -6,7 +6,7 @@ import { ReactComponent as OpenEye } from '../../images/eye.svg';
 import { ReactComponent as ClosedEye } from '../../images/eye-off.svg';
 
 import { useState } from 'react';
-import { auth } from '../../services/firebase/config';
+import { auth } from '../../firebase/config';
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
