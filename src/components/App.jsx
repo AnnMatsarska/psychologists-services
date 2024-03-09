@@ -1,6 +1,7 @@
 import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { SharedLayout } from './SharedLayout/SharedLayout';
+import { PrivateRoute } from '../pages/PrivateRoute';
 
 const HomePage = lazy(() => import('pages/Home/HomePage'));
 const PsychologistPage = lazy(() =>
@@ -16,7 +17,14 @@ export const App = () => {
       <Route path="/" element={<SharedLayout />}>
         <Route index element={<HomePage />} />
         <Route path="psychologists" element={<PsychologistPage />} />
-        <Route path="favorites" element={<FavoritePage />} />
+        <Route
+          path="favorites"
+          element={
+            <PrivateRoute>
+              <FavoritePage />
+            </PrivateRoute>
+          }
+        />
         <Route path="login" element={<LoginPage />} />
         <Route path="register" element={<RegisterPage />} />
         <Route path="*" element={<HomePage />} />

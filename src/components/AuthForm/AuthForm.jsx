@@ -6,14 +6,27 @@ import { ReactComponent as OpenEye } from '../../images/eye.svg';
 import { ReactComponent as ClosedEye } from '../../images/eye-off.svg';
 
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { setUser } from '../../redux/auth/authSlice';
+
 import { auth } from '../../firebase/config';
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  onAuthStateChanged,
 } from 'firebase/auth';
 
 export const AuthForm = ({ formTitle }) => {
+  const dispatch = useDispatch();
   const [showPassword, setShowPassword] = useState(false);
+
+  onAuthStateChanged(auth, user => {
+    if (user) {
+      dispatch(setUser({ id: user.uid, email: user.email }));
+    } else {
+      dispatch(setUser(null));
+    }
+  });
 
   const loginSchema = yup.object({
     ...(formTitle === `Registration` && {

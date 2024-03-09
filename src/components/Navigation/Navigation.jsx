@@ -1,8 +1,12 @@
 import { NavLink } from 'react-router-dom';
 import css from './Navigation.module.css';
+import { useSelector } from 'react-redux';
+import { selectUser } from '../../redux/auth/authSlice';
 
 export const Navigation = () => {
   const setAtive = ({ isActive }) => (isActive ? css.active : css.linkItem);
+  const user = useSelector(selectUser);
+
   return (
     <>
       <ul className={css.list}>
@@ -16,11 +20,13 @@ export const Navigation = () => {
             Psychologists
           </NavLink>
         </li>
-        <li>
-          <NavLink to="/favorites" className={setAtive}>
-            Favorites
-          </NavLink>
-        </li>
+        {user.currentUser !== null && (
+          <li>
+            <NavLink to="/favorites" className={setAtive}>
+              Favorites
+            </NavLink>
+          </li>
+        )}
       </ul>
     </>
   );
