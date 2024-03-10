@@ -8,16 +8,19 @@ import { signOut } from 'firebase/auth';
 import { auth } from '../../firebase/config';
 
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { setUser } from '../../redux/auth/authSlice';
 
 export const UserMenu = () => {
   const { currentUser } = useSelector(selectUser);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleLogOut = () => {
     signOut(auth)
       .then(() => {
         dispatch(setUser(null));
+        navigate('/');
       })
       .catch(error => {
         console.log(error);

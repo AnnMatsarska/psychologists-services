@@ -15,10 +15,12 @@ import {
   signInWithEmailAndPassword,
   updateProfile,
 } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
 
 export const AuthForm = ({ formTitle }) => {
   const [showPassword, setShowPassword] = useState(false);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const loginSchema = yup.object({
     ...(formTitle === `Registration` && {
@@ -58,6 +60,7 @@ export const AuthForm = ({ formTitle }) => {
             name: values.name,
           })
         );
+        navigate('/psychologists');
       } else {
         const userCredential = await signInWithEmailAndPassword(
           auth,
@@ -66,6 +69,7 @@ export const AuthForm = ({ formTitle }) => {
         );
         const user = userCredential.user;
         console.log(user);
+        navigate('/psychologists');
       }
     } catch (error) {
       const errorCode = error.code;
