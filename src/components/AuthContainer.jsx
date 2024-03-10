@@ -10,7 +10,9 @@ const AuthContainer = () => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, user => {
       if (user) {
-        dispatch(setUser({ id: user.uid, email: user.email, name: user.name }));
+        dispatch(
+          setUser({ id: user.uid, email: user.email, name: user.displayName })
+        );
       } else {
         dispatch(setUser(null));
       }

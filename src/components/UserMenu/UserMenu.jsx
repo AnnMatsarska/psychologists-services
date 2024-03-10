@@ -13,7 +13,6 @@ import { setUser } from '../../redux/auth/authSlice';
 export const UserMenu = () => {
   const { currentUser } = useSelector(selectUser);
   const dispatch = useDispatch();
-  console.log(currentUser);
 
   const handleLogOut = () => {
     signOut(auth)
@@ -27,9 +26,11 @@ export const UserMenu = () => {
 
   return (
     <>
-      <div className={css.userWrapper}>
-        <Avatar />
-        {/* <p>{currentUser.name}</p> */}
+      <div className={css.userMenuWrapper}>
+        <div className={css.userWrapper}>
+          <Avatar />
+          <p className={css.userName}>{currentUser.name}</p>
+        </div>
         <button type="button" onClick={handleLogOut} className={css.logoutBtn}>
           Log Out
         </button>

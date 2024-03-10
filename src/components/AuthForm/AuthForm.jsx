@@ -6,15 +6,19 @@ import { ReactComponent as OpenEye } from '../../images/eye.svg';
 import { ReactComponent as ClosedEye } from '../../images/eye-off.svg';
 
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { setUser } from '../../redux/auth/authSlice';
 
 import { auth } from '../../firebase/config';
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  updateProfile,
 } from 'firebase/auth';
 
 export const AuthForm = ({ formTitle }) => {
   const [showPassword, setShowPassword] = useState(false);
+  const dispatch = useDispatch();
 
   const loginSchema = yup.object({
     ...(formTitle === `Registration` && {
@@ -37,23 +41,32 @@ export const AuthForm = ({ formTitle }) => {
       if (formTitle === 'Registration') {
         const userCredential = await createUserWithEmailAndPassword(
           auth,
-          // values.name,
           values.email,
           values.password
         );
+
+        await updateProfile(userCredential.user, {
+          displayName: values.name,
+        });
+
         const user = userCredential.user;
-        console.log(user);
+
+        dispatch(
+          setUser({
+            id: user.uid,
+            email: values.email,
+            name: values.name,
+          })
+        );
       } else {
         const userCredential = await signInWithEmailAndPassword(
           auth,
-          // values.name,
           values.email,
           values.password
         );
         const user = userCredential.user;
         console.log(user);
       }
-      // onAuthSuccess();
     } catch (error) {
       const errorCode = error.code;
       const errorMessage = error.message;

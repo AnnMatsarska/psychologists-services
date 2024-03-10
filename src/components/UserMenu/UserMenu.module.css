@@ -18,8 +18,21 @@
     color: var(--secondary-color-white);
 }
 
-.userWrapper {
+.userMenuWrapper {
     display: flex;
     align-items: center;
     gap: 28px;
+}
+
+.userWrapper {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.userName {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.25;
+    color: var(--secondary-color-black);
 }
