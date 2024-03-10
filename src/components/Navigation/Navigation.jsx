@@ -6,10 +6,11 @@ import { selectUser } from '../../redux/auth/authSlice';
 export const Navigation = () => {
   const setAtive = ({ isActive }) => (isActive ? css.active : css.linkItem);
   const user = useSelector(selectUser);
+  const listClass = user.currentUser ? css.listLoggedIn : css.list;
 
   return (
     <>
-      <ul className={css.list}>
+      <ul className={listClass}>
         <li>
           <NavLink to="/" className={setAtive}>
             Home
@@ -20,7 +21,7 @@ export const Navigation = () => {
             Psychologists
           </NavLink>
         </li>
-        {user.currentUser !== null && (
+        {user.currentUser && (
           <li>
             <NavLink to="/favorites" className={setAtive}>
               Favorites

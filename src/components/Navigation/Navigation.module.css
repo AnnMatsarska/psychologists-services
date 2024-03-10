@@ -1,8 +1,13 @@
 .list {
     display: flex;
     gap: 40px;
-    margin-left: -96px;
+    margin-left: -130px;
+}
 
+.listLoggedIn {
+    display: flex;
+    gap: 40px;
+    margin-left: 0;
 }
 
 .linkItem {
