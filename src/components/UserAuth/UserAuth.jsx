@@ -6,6 +6,7 @@ import { AuthForm } from 'components/AuthForm/AuthForm';
 export const UserAuth = () => {
   const [activeButton, setActiveButton] = useState(null);
   const [isOpen, setTeamModalOpen] = useState(false);
+  // const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const handleButtonClick = button => {
     setActiveButton(button);
@@ -18,8 +19,17 @@ export const UserAuth = () => {
     document.body.classList.remove('body-scroll-lock');
     setActiveButton(null);
   };
+
+  // const handleAuthSuccess = () => {
+  //   // Update state to hide the modal after successful authentication
+  //   setIsAuthenticated(true);
+  // };
+
   return (
     <>
+      {/* {!isAuthenticated && (
+        
+      )} */}
       <ul className={css.list}>
         <li>
           <button
@@ -48,6 +58,7 @@ export const UserAuth = () => {
         <Modal onClose={closeModal}>
           <AuthForm
             formTitle={activeButton === 'login' ? 'Log In' : 'Registration'}
+            // onAuthSuccess={handleAuthSuccess}
           />
         </Modal>
       )}

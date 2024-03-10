@@ -37,6 +37,7 @@ export const AuthForm = ({ formTitle }) => {
       if (formTitle === 'Registration') {
         const userCredential = await createUserWithEmailAndPassword(
           auth,
+          // values.name,
           values.email,
           values.password
         );
@@ -45,12 +46,14 @@ export const AuthForm = ({ formTitle }) => {
       } else {
         const userCredential = await signInWithEmailAndPassword(
           auth,
+          // values.name,
           values.email,
           values.password
         );
         const user = userCredential.user;
         console.log(user);
       }
+      // onAuthSuccess();
     } catch (error) {
       const errorCode = error.code;
       const errorMessage = error.message;

@@ -2,8 +2,13 @@ import { Navigation } from 'components/Navigation/Navigation';
 import css from './AppBar.module.css';
 import { UserAuth } from 'components/UserAuth/UserAuth';
 import { NavLink } from 'react-router-dom';
+import { UserMenu } from 'components/UserMenu/UserMenu';
+import { useSelector } from 'react-redux';
+import { selectUser } from '../../redux/auth/authSlice';
 
 export const AppBar = () => {
+  const user = useSelector(selectUser);
+
   return (
     <header className={css.header}>
       <div className={css.container}>
@@ -14,7 +19,9 @@ export const AppBar = () => {
             </p>
           </NavLink>
           <Navigation />
-          <UserAuth />
+          {user.currentUser !== null ? <UserMenu /> : <UserAuth />}
+          {/* <UserMenu />
+          <UserAuth /> */}
         </nav>
       </div>
     </header>
