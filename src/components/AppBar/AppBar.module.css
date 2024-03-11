@@ -1,6 +1,7 @@
 .header {
     /* position: absolute; */
     width: 100%;
+    background-color: rgba(25, 26, 21, 0.05);
 }
 
 .container {

@@ -1,0 +1,76 @@
+.item {
+    width: 100%;
+    padding: 24px;
+    border-radius: 24px;
+    background: var(--secondary-color-white);
+}
+
+.imgBorder {
+    display: inline-block;
+    padding: 12px;
+    border: 2px solid rgba(84, 190, 150, 0.2);
+    border-radius: 30px;
+}
+
+.itemImage {
+    border-radius: 15px;
+    outline: 0 0 10px 5px red;
+}
+
+.itemTitle {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--secondary-color-gray);
+}
+
+.itemName {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1;
+    color: var(--secondary-color-black);
+}
+
+.itemMainData {
+    display: inline-block;
+    padding: 8px 16px 8px 16px;
+
+    border-radius: 24px;
+    background-color: rgb(243, 243, 243);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--secondary-color-black);
+}
+
+.spanItem {
+    color: var(--secondary-color-gray);
+}
+
+.itemAbout {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.25;
+    color: rgba(25, 26, 21, 0.5);
+}
+
+.readMoreBtn {
+    background-color: inherit;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.25;
+    color: var(--secondary-color-black);
+    text-decoration-line: underline;
+}
+
+.itemData {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.25;
+    color: var(--secondary-color-black);
+}
+
+.priceSpan {
+    color: rgb(56, 205, 62);
+}

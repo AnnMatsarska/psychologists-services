@@ -7,6 +7,7 @@
   --secondary-color-light-green: rgba(84, 190, 150, 0.2);
   --secondary-color-white: rgb(251, 251, 251);
   --secondary-color-black: rgb(25, 26, 21);
+  --secondary-color-gray: rgb(138, 138, 137);
   --backdrop-color-black: rgba(0, 0, 0, 0.8);
 }
 
@@ -16,6 +17,7 @@
 
 body {
   margin: 0;
+  background-color: rgba(25, 26, 21, 0.05);
   font-family: "Inter", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

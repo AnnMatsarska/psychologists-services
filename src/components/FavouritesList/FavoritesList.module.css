@@ -1,16 +1,10 @@
 .section {
     padding-top: 64px;
-    background-color: rgba(25, 26, 21, 0.05);
+    /* background-color: rgba(25, 26, 21, 0.05); */
 }
 
 .container {
     margin: 0 auto;
     max-width: 1440px;
     padding: 0px 128px;
-}
-
-.list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 32px;
 }

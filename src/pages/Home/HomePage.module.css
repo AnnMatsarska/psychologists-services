@@ -8,7 +8,7 @@
     margin: 0 auto;
     max-width: 1440px;
     padding: 0px 128px;
-    background: linear-gradient(to top left, var(--primary-color-green), #ffffff 53%);
+    background: linear-gradient(to top left, var(--primary-color-green), rgba(25, 26, 21, 0.05) 53%);
     height: calc(100vh - 99px);
 }
 
