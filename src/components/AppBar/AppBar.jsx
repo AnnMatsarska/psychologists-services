@@ -20,8 +20,6 @@ export const AppBar = () => {
           </NavLink>
           <Navigation />
           {user.currentUser !== null ? <UserMenu /> : <UserAuth />}
-          {/* <UserMenu />
-          <UserAuth /> */}
         </nav>
       </div>
     </header>

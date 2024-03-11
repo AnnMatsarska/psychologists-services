@@ -1,5 +1,6 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import usersReducer from './auth/authSlice';
+import psychologistsReducer from './psychologists/slice';
 
 // import {
 //   persistStore,
@@ -26,6 +27,7 @@ const rootReducer = combineReducers({
   //   adverts: persistReducer(advertsConfig, advertsReducer),
   //   filters: filterReducer,
   users: usersReducer,
+  psychologists: psychologistsReducer,
 });
 
 export const store = configureStore({

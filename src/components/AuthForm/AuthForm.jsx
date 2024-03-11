@@ -7,6 +7,7 @@ import { ReactComponent as ClosedEye } from '../../images/eye-off.svg';
 
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { setUser } from '../../redux/auth/authSlice';
 
 import { auth } from '../../firebase/config';
@@ -15,7 +16,6 @@ import {
   signInWithEmailAndPassword,
   updateProfile,
 } from 'firebase/auth';
-import { useNavigate } from 'react-router-dom';
 
 export const AuthForm = ({ formTitle }) => {
   const [showPassword, setShowPassword] = useState(false);
