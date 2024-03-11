@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkpsychologists_service=self.webpackChunkpsychologists_service||[]).push([[407],{407:function(s,e,c){c.r(e),c.d(e,{default:function(){return o}});var n="PsychologistList_section__4Tzd+",i="PsychologistList_container__vYWsK",t=c(184),r=function(){return(0,t.jsx)("section",{className:n,children:(0,t.jsx)("div",{className:i,children:(0,t.jsx)("h2",{children:"Hello world"})})})},o=function(){return(0,t.jsx)(t.Fragment,{children:(0,t.jsx)(r,{})})}}}]);
-//# sourceMappingURL=407.f6881892.chunk.js.map
