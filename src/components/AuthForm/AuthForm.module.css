@@ -38,6 +38,10 @@
     color: var(--secondary-color-black);
     border: none;
     background-color: inherit;
+
+    &:focus {
+        outline: none;
+    }
 }
 
 .errormessage {
@@ -89,13 +93,9 @@
     color: var(--secondary-color-white);
 
     transition: all 300ms;
-}
 
-.buttonForm:hover,
-.buttonForm:focus {
-    background-color: var(--secondary-color-green);
-}
-
-.input:focus {
-    outline: none;
+    &:hover,
+    &:focus {
+        background-color: var(--secondary-color-green);
+    }
 }

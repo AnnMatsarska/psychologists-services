@@ -46,10 +46,10 @@
     background-color: transparent;
     scale: 1;
     transition: all 300ms;
-}
 
-.btnClose:hover,
-.btnClose:hover {
-    cursor: pointer;
-    scale: 1.1;
+    &:hover,
+    &:hover {
+        cursor: pointer;
+        scale: 1.1;
+    }
 }

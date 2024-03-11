@@ -50,12 +50,13 @@
     line-height: 1.2;
     color: var(--secondary-color-white);
     transition: all 300ms;
+
+    &:hover,
+    &:focus {
+        background-color: var(--secondary-color-green);
+    }
 }
 
-.button:hover,
-.button:focus {
-    background-color: var(--secondary-color-green);
-}
 
 .buttonSpan {
     margin-right: 18px;
