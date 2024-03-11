@@ -15,17 +15,12 @@ export const PsychologistList = () => {
   }, [dispatch]);
 
   return (
-    <section className={css.section}>
-      <div className={css.container}>
-        <ul className={css.list}>
-          {psychologists.map(psychologist => (
-            <PsychologistItem
-              key={psychologist.id}
-              psychologist={psychologist}
-            />
-          ))}
-        </ul>
-      </div>
-    </section>
+    <>
+      <ul className={css.list}>
+        {psychologists.map(psychologist => (
+          <PsychologistItem key={psychologist.id} psychologist={psychologist} />
+        ))}
+      </ul>
+    </>
   );
 };
