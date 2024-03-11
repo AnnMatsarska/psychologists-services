@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkpsychologists_service=self.webpackChunkpsychologists_service||[]).push([[403],{6403:function(s,e,n){n.r(e),n.d(e,{default:function(){return o}});var t="FavoritesList_section__LQlLx",i="FavoritesList_container__LJKyl",c=n(184),r=function(){return(0,c.jsx)("section",{className:t,children:(0,c.jsx)("div",{className:i})})},o=function(){return(0,c.jsx)(c.Fragment,{children:(0,c.jsx)(r,{})})}}}]);
-//# sourceMappingURL=403.1d6d5e54.chunk.js.map
