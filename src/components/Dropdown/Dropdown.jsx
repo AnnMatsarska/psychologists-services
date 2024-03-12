@@ -41,7 +41,7 @@ export const Dropdown = ({ defaultOption, onSelect, children }) => {
     <div className={css.dropdown} ref={dropdownRef}>
       <button className={css.dropBtn} onClick={() => setIsOpen(!isOpen)}>
         {selectedOption}
-        <IconDropdown />
+        <IconDropdown className={isOpen ? css.rotatedIcon : null} />
       </button>
 
       {isOpen && (
