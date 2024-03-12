@@ -2,16 +2,25 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const psychologistsSlice = createSlice({
   name: 'psychologists',
-  initialState: [],
+  initialState: {
+    data: [],
+    currentPage: 1,
+    itemsPerPage: 3,
+  },
   reducers: {
-    setPsychologists: (_, action) => {
-      return action.payload;
+    setPsychologists: (state, action) => {
+      state.data = action.payload;
+    },
+    nextPage: state => {
+      state.currentPage += 1;
     },
   },
 });
 
-export const { setPsychologists } = psychologistsSlice.actions;
+export const { setPsychologists, nextPage } = psychologistsSlice.actions;
 
-export const selectPsychologists = state => state.psychologists;
+export const selectPsychologists = state => state.psychologists.data;
+export const selectCurrentPage = state => state.psychologists.currentPage;
+export const selectItemsPerPage = state => state.psychologists.itemsPerPage;
 
 export default psychologistsSlice.reducer;

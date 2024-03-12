@@ -1,7 +1,12 @@
 import css from './PsychologistList.module.css';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectPsychologists } from '../../redux/psychologists/slice';
+import {
+  selectPsychologists,
+  selectCurrentPage,
+  selectItemsPerPage,
+  nextPage,
+} from '../../redux/psychologists/slice';
 import { fetchPsychologists } from '../../redux/psychologists/actions';
 
 import { PsychologistItem } from '../PsycologistItem/PsychologistItem';
@@ -9,18 +14,34 @@ import { PsychologistItem } from '../PsycologistItem/PsychologistItem';
 export const PsychologistList = () => {
   const dispatch = useDispatch();
   const psychologists = useSelector(selectPsychologists);
+  const currentPage = useSelector(selectCurrentPage);
+  const itemsPerPage = useSelector(selectItemsPerPage);
 
   useEffect(() => {
     dispatch(fetchPsychologists());
   }, [dispatch]);
 
+  const displayPsychologists = psychologists.slice(
+    0,
+    currentPage * itemsPerPage
+  );
+
+  const handleLoadMore = () => {
+    dispatch(nextPage());
+  };
+
   return (
     <>
       <ul className={css.list}>
-        {psychologists.map(psychologist => (
+        {displayPsychologists.map(psychologist => (
           <PsychologistItem key={psychologist.id} psychologist={psychologist} />
         ))}
       </ul>
+      {displayPsychologists.length < psychologists.length && (
+        <button onClick={handleLoadMore} className={css.loadMoreBtn}>
+          Load More
+        </button>
+      )}
     </>
   );
 };
