@@ -6,6 +6,7 @@ import {
   selectCurrentPage,
   selectItemsPerPage,
   nextPage,
+  resetStateCars,
 } from '../../redux/psychologists/slice';
 import { fetchPsychologists } from '../../redux/psychologists/actions';
 
@@ -19,6 +20,10 @@ export const PsychologistList = () => {
 
   useEffect(() => {
     dispatch(fetchPsychologists());
+
+    return () => {
+      dispatch(resetStateCars());
+    };
   }, [dispatch]);
 
   const displayPsychologists = psychologists.slice(

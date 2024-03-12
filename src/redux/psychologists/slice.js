@@ -14,10 +14,15 @@ const psychologistsSlice = createSlice({
     nextPage: state => {
       state.currentPage += 1;
     },
+    resetStateCars: state => {
+      state.data = [];
+      state.currentPage = 1;
+    },
   },
 });
 
-export const { setPsychologists, nextPage } = psychologistsSlice.actions;
+export const { setPsychologists, nextPage, resetStateCars } =
+  psychologistsSlice.actions;
 
 export const selectPsychologists = state => state.psychologists.data;
 export const selectCurrentPage = state => state.psychologists.currentPage;
