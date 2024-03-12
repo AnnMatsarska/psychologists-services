@@ -120,13 +120,11 @@
 
 .endWrapper {
     display: flex;
-    width: 296px;
     flex-direction: row;
     gap: 8px;
     align-items: center;
     position: absolute;
     left: 812px;
-    right: 78px;
     top: 30px;
 }
 

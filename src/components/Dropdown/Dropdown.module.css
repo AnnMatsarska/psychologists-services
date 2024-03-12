@@ -1,0 +1,33 @@
+.dropdown {
+    position: relative;
+}
+
+.dropBtn {
+    position: static;
+    margin-bottom: 32px;
+    width: 226px;
+    height: 48px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 18px;
+    border: none;
+    border-radius: 14px;
+    background: var(--primary-color-green);
+    color: var(--secondary-color-white);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.25;
+
+}
+
+.list {
+    position: absolute;
+    z-index: 100;
+    width: 226px;
+    height: 216px;
+    left: 9px;
+    right: 871px;
+    top: 59px;
+}

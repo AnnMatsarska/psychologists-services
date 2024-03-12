@@ -6,6 +6,7 @@ const psychologistsSlice = createSlice({
     data: [],
     currentPage: 1,
     itemsPerPage: 3,
+    filter: ' ',
   },
   reducers: {
     setPsychologists: (state, action) => {
@@ -18,14 +19,18 @@ const psychologistsSlice = createSlice({
       state.data = [];
       state.currentPage = 1;
     },
+    setFilter: (state, action) => {
+      state.filter = action.payload;
+    },
   },
 });
 
-export const { setPsychologists, nextPage, resetStateCars } =
+export const { setPsychologists, nextPage, resetStateCars, setFilter } =
   psychologistsSlice.actions;
 
 export const selectPsychologists = state => state.psychologists.data;
 export const selectCurrentPage = state => state.psychologists.currentPage;
 export const selectItemsPerPage = state => state.psychologists.itemsPerPage;
+export const selectFilter = state => state.psychologists.filter;
 
 export default psychologistsSlice.reducer;

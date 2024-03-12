@@ -23,3 +23,12 @@
         background-color: var(--secondary-color-green);
     }
 }
+
+.filterLabel {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.28;
+    color: var(--secondary-color-gray)
+}

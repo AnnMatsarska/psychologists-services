@@ -1,4 +1,4 @@
-import homeImg from '../../images/home-image-min.png';
+import homeImg from '../../images/home-image-min.webp';
 import css from './HomePage.module.css';
 import { ReactComponent as Arrow } from '../../images/arrow.svg';
 import { ReactComponent as Check } from '../../images/check.svg';
