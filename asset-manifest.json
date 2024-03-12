@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/psychologists-services/static/css/main.cb3dc5aa.css",
-    "main.js": "/psychologists-services/static/js/main.bf06b8cf.js",
-    "static/css/842.201cf50f.chunk.css": "/psychologists-services/static/css/842.201cf50f.chunk.css",
-    "static/js/842.d9ea6bd6.chunk.js": "/psychologists-services/static/js/842.d9ea6bd6.chunk.js",
-    "static/css/425.cf7f3eec.chunk.css": "/psychologists-services/static/css/425.cf7f3eec.chunk.css",
-    "static/js/425.8c784d2f.chunk.js": "/psychologists-services/static/js/425.8c784d2f.chunk.js",
+    "main.js": "/psychologists-services/static/js/main.5ba20b1a.js",
+    "static/css/381.40849864.chunk.css": "/psychologists-services/static/css/381.40849864.chunk.css",
+    "static/js/381.ef2a3f15.chunk.js": "/psychologists-services/static/js/381.ef2a3f15.chunk.js",
+    "static/css/240.0657dc54.chunk.css": "/psychologists-services/static/css/240.0657dc54.chunk.css",
+    "static/js/240.8a111a75.chunk.js": "/psychologists-services/static/js/240.8a111a75.chunk.js",
     "static/css/743.bc598d53.chunk.css": "/psychologists-services/static/css/743.bc598d53.chunk.css",
     "static/js/743.543cadfd.chunk.js": "/psychologists-services/static/js/743.543cadfd.chunk.js",
     "static/media/Inter-ExtraBold.ttf": "/psychologists-services/static/media/Inter-ExtraBold.4164cfba15dbca5f37aa.ttf",
@@ -17,7 +17,7 @@
     "static/media/Inter-Thin.ttf": "/psychologists-services/static/media/Inter-Thin.97a5cc3ca8d3b35a4239.ttf",
     "static/media/Inter-Light.ttf": "/psychologists-services/static/media/Inter-Light.02850f28027788580733.ttf",
     "static/media/Inter-Regular.ttf": "/psychologists-services/static/media/Inter-Regular.9ca9ba81e9dcaa12b3a1.ttf",
-    "static/media/home-image-min.png": "/psychologists-services/static/media/home-image-min.86875f434150f1584c6e.png",
+    "static/media/home-image-min.webp": "/psychologists-services/static/media/home-image-min.0669ea2ed7ff4968a39c.webp",
     "static/media/group.svg": "/psychologists-services/static/media/group.caa5634683cb835a6b1a229f4e70a45b.svg",
     "static/media/eye-off.svg": "/psychologists-services/static/media/eye-off.9df2415fabd7364e64d8be0d7ad20be4.svg",
     "static/media/question.svg": "/psychologists-services/static/media/question.08d8184664a2d44131c274d0bbaeacb7.svg",
@@ -29,17 +29,18 @@
     "static/media/arrow.svg": "/psychologists-services/static/media/arrow.760e61286adbf9d28b486c997bfeb478.svg",
     "static/media/closeIcon.svg": "/psychologists-services/static/media/closeIcon.8a914cd1eded600f109ec0261ddb3a5c.svg",
     "static/media/check.svg": "/psychologists-services/static/media/check.925540085b888c7d13b6cd51266cc074.svg",
+    "static/media/chevron-down.svg": "/psychologists-services/static/media/chevron-down.3c6e07df4fcaab613ec137eddcc2754a.svg",
     "main.cb3dc5aa.css.map": "/psychologists-services/static/css/main.cb3dc5aa.css.map",
-    "main.bf06b8cf.js.map": "/psychologists-services/static/js/main.bf06b8cf.js.map",
-    "842.201cf50f.chunk.css.map": "/psychologists-services/static/css/842.201cf50f.chunk.css.map",
-    "842.d9ea6bd6.chunk.js.map": "/psychologists-services/static/js/842.d9ea6bd6.chunk.js.map",
-    "425.cf7f3eec.chunk.css.map": "/psychologists-services/static/css/425.cf7f3eec.chunk.css.map",
-    "425.8c784d2f.chunk.js.map": "/psychologists-services/static/js/425.8c784d2f.chunk.js.map",
+    "main.5ba20b1a.js.map": "/psychologists-services/static/js/main.5ba20b1a.js.map",
+    "381.40849864.chunk.css.map": "/psychologists-services/static/css/381.40849864.chunk.css.map",
+    "381.ef2a3f15.chunk.js.map": "/psychologists-services/static/js/381.ef2a3f15.chunk.js.map",
+    "240.0657dc54.chunk.css.map": "/psychologists-services/static/css/240.0657dc54.chunk.css.map",
+    "240.8a111a75.chunk.js.map": "/psychologists-services/static/js/240.8a111a75.chunk.js.map",
     "743.bc598d53.chunk.css.map": "/psychologists-services/static/css/743.bc598d53.chunk.css.map",
     "743.543cadfd.chunk.js.map": "/psychologists-services/static/js/743.543cadfd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cb3dc5aa.css",
-    "static/js/main.bf06b8cf.js"
+    "static/js/main.5ba20b1a.js"
   ]
 }
