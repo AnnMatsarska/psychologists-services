@@ -1,11 +1,12 @@
 .section {
-    height: 100%;
     padding-top: 64px;
-    background-color: rgba(25, 26, 21, 0.05);
+    padding-bottom: 64px;
+
 }
 
 .container {
     margin: 0 auto;
     max-width: 1440px;
     padding: 0px 128px;
+
 }

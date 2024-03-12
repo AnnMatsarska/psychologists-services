@@ -13,9 +13,9 @@ export const applyFilter = (psychologists, filter) => {
         psychologist => psychologist.price_per_hour > 10
       );
     case 'Popular':
-      return psychologists.filter(psychologist => psychologist.rating > 4.7);
+      return psychologists.slice().sort((a, b) => b.rating - a.rating);
     case 'Not popular':
-      return psychologists.filter(psychologist => psychologist.rating < 4.7);
+      return psychologists.slice().sort((a, b) => a.rating - b.rating);
     default:
       return psychologists;
   }

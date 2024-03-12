@@ -101,7 +101,7 @@ export const AuthForm = ({ formTitle }) => {
         validationSchema={loginSchema}
         onSubmit={handleSubmit}
       >
-        {({ errors, touched, values, handleChange }) => (
+        {({ errors, touched, values }) => (
           <Form>
             <div className={css.formWrapper}>
               {formTitle === 'Registration' && (
@@ -114,9 +114,6 @@ export const AuthForm = ({ formTitle }) => {
                     >
                       <Field
                         id="name"
-                        onChange={e => {
-                          handleChange(e);
-                        }}
                         type="name"
                         name="name"
                         value={values.name}
@@ -140,9 +137,6 @@ export const AuthForm = ({ formTitle }) => {
                 >
                   <Field
                     id="email"
-                    onChange={e => {
-                      handleChange(e);
-                    }}
                     type="email"
                     name="email"
                     value={values.email}
@@ -164,9 +158,6 @@ export const AuthForm = ({ formTitle }) => {
                 >
                   <Field
                     id="password"
-                    onChange={e => {
-                      handleChange(e);
-                    }}
                     type={showPassword ? 'text' : 'password'}
                     name="password"
                     value={values.password}

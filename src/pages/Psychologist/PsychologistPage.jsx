@@ -1,13 +1,15 @@
 import { PsychologistList } from '../../components/PsychologistList/PsychologistList';
 import css from './PsychologistPage.module.css';
+import { Filter } from '../../components/Filter/Filter';
 
 const PsychologistPage = () => {
   return (
-    <section className={css.section}>
-      <div className={css.container}>
+    <div className={css.container}>
+      <section className={css.section}>
+        <Filter />
         <PsychologistList />
-      </div>
-    </section>
+      </section>
+    </div>
   );
 };
 

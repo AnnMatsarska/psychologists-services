@@ -4,11 +4,11 @@ import css from './FavoritePage.module.css';
 
 const FavoritePage = () => {
   return (
-    <section className={css.section}>
-      <div className={css.container}>
+    <div className={css.container}>
+      <section className={css.section}>
         <FavoritesList />
-      </div>
-    </section>
+      </section>
+    </div>
   );
 };
 

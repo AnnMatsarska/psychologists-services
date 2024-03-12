@@ -8,13 +8,11 @@ import {
   selectFilter,
   nextPage,
   resetStateCars,
-  setFilter,
 } from '../../redux/psychologists/slice';
 import { fetchPsychologists } from '../../redux/psychologists/actions';
 import { applyFilter } from '../../services/applyFilter';
 
 import { PsychologistItem } from '../PsycologistItem/PsychologistItem';
-import { Filter } from '../Filter/Filter';
 
 export const PsychologistList = () => {
   const dispatch = useDispatch();
@@ -22,7 +20,6 @@ export const PsychologistList = () => {
   const currentPage = useSelector(selectCurrentPage);
   const itemsPerPage = useSelector(selectItemsPerPage);
   const filter = useSelector(selectFilter);
-  const defaultFilter = 'Show all';
 
   useEffect(() => {
     dispatch(fetchPsychologists());
@@ -42,13 +39,8 @@ export const PsychologistList = () => {
     dispatch(nextPage());
   };
 
-  const handleFilterChange = selectedFilter => {
-    dispatch(setFilter(selectedFilter));
-  };
-
   return (
     <>
-      <Filter defaultFilter={defaultFilter} onSelect={handleFilterChange} />
       <ul className={css.list}>
         {displayPsychologists.map(psychologist => (
           <PsychologistItem key={psychologist.id} psychologist={psychologist} />
