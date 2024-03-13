@@ -34,6 +34,9 @@ export const PsychologistList = () => {
     0,
     currentPage * itemsPerPage
   );
+  const itemsNeedToBeDisplayed =
+    displayPsychologists.length < psychologists.length &&
+    filteredPsychologists.length !== 0;
 
   const handleLoadMore = () => {
     dispatch(nextPage());
@@ -46,11 +49,11 @@ export const PsychologistList = () => {
           <PsychologistItem key={psychologist.id} psychologist={psychologist} />
         ))}
       </ul>
-      {displayPsychologists.length < psychologists.length && (
+      {itemsNeedToBeDisplayed ? (
         <button onClick={handleLoadMore} className={css.loadMoreBtn}>
           Load More
         </button>
-      )}
+      ) : null}
     </>
   );
 };
