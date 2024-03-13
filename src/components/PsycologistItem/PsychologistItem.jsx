@@ -4,24 +4,31 @@ import { ReactComponent as NormalHeart } from '../../images/normal-heart.svg';
 import { ReactComponent as ActiveHeart } from '../../images/hover-heart.svg';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-  addFavorite,
-  deleteFavorite,
+  addItem,
+  deleteItem,
   selectFavorites,
-} from '../../redux/psychologists/slice';
+} from '../../redux/favorites/slice';
+import { useEffect, useState } from 'react';
 
 export const PsychologistItem = ({ psychologist }) => {
+  const [isFavorite, setIsFavorite] = useState(false);
   const favorites = useSelector(selectFavorites);
   const dispatch = useDispatch();
   const { id } = psychologist;
 
-  const isFavoriteCar = id =>
-    favorites.some(psychologist => psychologist.id === id);
-
-  const handleToggle = () => {
-    if (isFavoriteCar(id)) {
-      dispatch(deleteFavorite(psychologist.id));
+  useEffect(() => {
+    if (favorites.find(item => item.id === id)) {
+      setIsFavorite(true);
     } else {
-      dispatch(addFavorite(psychologist));
+      setIsFavorite(false);
+    }
+  }, [favorites, dispatch, id]);
+
+  const handleFavClick = () => {
+    if (favorites.find(fav => fav.id === id)) {
+      dispatch(deleteItem(psychologist.id));
+    } else {
+      dispatch(addItem(psychologist));
     }
   };
 
@@ -74,8 +81,8 @@ export const PsychologistItem = ({ psychologist }) => {
           </p>
         </div>
       </div>
-      <button className={css.btnHeart} type="button" onClick={handleToggle}>
-        {isFavoriteCar(id) ? <ActiveHeart /> : <NormalHeart />}
+      <button className={css.btnHeart} type="button" onClick={handleFavClick}>
+        {isFavorite ? <ActiveHeart /> : <NormalHeart />}
       </button>
     </li>
   );

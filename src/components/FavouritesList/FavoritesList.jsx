@@ -4,12 +4,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
   nextPage,
   selectCurrentPage,
-  selectFavorites,
   selectFilter,
   selectItemsPerPage,
 } from '../../redux/psychologists/slice';
 import { PsychologistItem } from '../PsycologistItem/PsychologistItem';
 import { applyFilter } from '../../services/applyFilter';
+import { selectFavorites } from '../../redux/favorites/slice';
 
 export const FavoritesList = () => {
   const favorites = useSelector(selectFavorites);
@@ -35,8 +35,13 @@ export const FavoritesList = () => {
     <>
       <Filter />
       <ul className={css.list}>
-        {displayPsychologists.map(item => {
-          return <PsychologistItem key={item.id} psychologist={item} />;
+        {displayPsychologists.map(psychologist => {
+          return (
+            <PsychologistItem
+              key={psychologist.id}
+              psychologist={psychologist}
+            />
+          );
         })}
       </ul>
       {itemsNeedToBeDisplayed ? (

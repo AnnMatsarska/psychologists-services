@@ -7,7 +7,7 @@ import {
   selectItemsPerPage,
   selectFilter,
   nextPage,
-  resetStateCars,
+  resetState,
 } from '../../redux/psychologists/slice';
 import { fetchPsychologists } from '../../redux/psychologists/actions';
 import { applyFilter } from '../../services/applyFilter';
@@ -23,9 +23,11 @@ export const PsychologistList = () => {
 
   useEffect(() => {
     dispatch(fetchPsychologists());
+  }, [dispatch]);
 
+  useEffect(() => {
     return () => {
-      dispatch(resetStateCars());
+      dispatch(resetState());
     };
   }, [dispatch]);
 
@@ -44,11 +46,16 @@ export const PsychologistList = () => {
 
   return (
     <>
-      <ul className={css.list}>
-        {displayPsychologists.map(psychologist => (
-          <PsychologistItem key={psychologist.id} psychologist={psychologist} />
-        ))}
-      </ul>
+      {displayPsychologists && (
+        <ul className={css.list}>
+          {displayPsychologists.map(psychologist => (
+            <PsychologistItem
+              key={psychologist.id}
+              psychologist={psychologist}
+            />
+          ))}
+        </ul>
+      )}
       {itemsNeedToBeDisplayed ? (
         <button onClick={handleLoadMore} className={css.loadMoreBtn}>
           Load More
