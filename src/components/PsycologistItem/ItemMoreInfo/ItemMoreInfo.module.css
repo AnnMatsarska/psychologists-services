@@ -1,0 +1,26 @@
+.list {
+    margin-top: 34px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    font-weight: 500;
+    color: var(--secondary-color-black);
+}
+
+.reviewer {
+    font-size: 16px;
+    line-height: 1.25;
+}
+
+.rating {
+    font-size: 14px;
+    line-height: 1.28;
+}
+
+.comment {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.25;
+    color: rgba(25, 26, 21, 0.5)
+}

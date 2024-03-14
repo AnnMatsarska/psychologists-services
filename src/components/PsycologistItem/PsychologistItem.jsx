@@ -1,4 +1,5 @@
 import css from './PsychologistItem.module.css';
+import { ItemMoreInfo } from './ItemMoreInfo/ItemMoreInfo';
 import { ReactComponent as Star } from '../../images/star.svg';
 import { ReactComponent as NormalHeart } from '../../images/normal-heart.svg';
 import { ReactComponent as ActiveHeart } from '../../images/hover-heart.svg';
@@ -9,27 +10,37 @@ import {
   selectFavorites,
 } from '../../redux/favorites/slice';
 import { useEffect, useState } from 'react';
+import { selectUser } from '../../redux/auth/authSlice';
 
 export const PsychologistItem = ({ psychologist }) => {
-  const [isFavorite, setIsFavorite] = useState(false);
-  const favorites = useSelector(selectFavorites);
   const dispatch = useDispatch();
+  const [isFavorite, setIsFavorite] = useState(false);
+  const [showAdditionalInfo, setShowAdditionalInfo] = useState(false);
+
+  const favorites = useSelector(selectFavorites);
+  const user = useSelector(selectUser);
   const { id } = psychologist;
 
+  const isAlreadyFavorite = favorites.find(fav => fav.id === id);
+
   useEffect(() => {
-    if (favorites.find(item => item.id === id)) {
+    if (isAlreadyFavorite) {
       setIsFavorite(true);
     } else {
       setIsFavorite(false);
     }
-  }, [favorites, dispatch, id]);
+  }, [dispatch, isAlreadyFavorite]);
 
   const handleFavClick = () => {
-    if (favorites.find(fav => fav.id === id)) {
-      dispatch(deleteItem(psychologist.id));
-    } else {
-      dispatch(addItem(psychologist));
+    if (!user.currentUser) {
+      alert('You must be registered to add to favorites!');
+      return;
     }
+    dispatch(isAlreadyFavorite ? deleteItem(id) : addItem(psychologist));
+  };
+
+  const handleReadMoreClick = () => {
+    setShowAdditionalInfo(!showAdditionalInfo);
   };
 
   return (
@@ -66,7 +77,15 @@ export const PsychologistItem = ({ psychologist }) => {
             </p>
           </div>
           <p className={css.itemAbout}>{psychologist.about}</p>
-          <button className={css.readMoreBtn}>Read More</button>
+          {!showAdditionalInfo ? (
+            <button className={css.readMoreBtn} onClick={handleReadMoreClick}>
+              Read More
+            </button>
+          ) : null}
+          {/* <button className={css.readMoreBtn} onClick={handleReadMoreClick}>
+            Read More
+          </button> */}
+          {showAdditionalInfo && <ItemMoreInfo psychologist={psychologist} />}
         </div>
       </div>
       <div className={css.endWrapper}>
