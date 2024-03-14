@@ -12,6 +12,9 @@ import {
 import { useEffect, useState } from 'react';
 import { selectUser } from '../../redux/auth/authSlice';
 
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 export const PsychologistItem = ({ psychologist }) => {
   const dispatch = useDispatch();
   const [isFavorite, setIsFavorite] = useState(false);
@@ -33,7 +36,7 @@ export const PsychologistItem = ({ psychologist }) => {
 
   const handleFavClick = () => {
     if (!user.currentUser) {
-      alert('You must be registered to add to favorites!');
+      toast.warning('You must be registered to add to favorites!');
       return;
     }
     dispatch(isAlreadyFavorite ? deleteItem(id) : addItem(psychologist));

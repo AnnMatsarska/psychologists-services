@@ -2,6 +2,9 @@ import css from './AppointmentForm.module.css';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 export const AppointmentForm = ({ psychologist, onClose }) => {
   const initialValues = {
     name: '',
@@ -24,6 +27,7 @@ export const AppointmentForm = ({ psychologist, onClose }) => {
   });
 
   const handleSubmit = () => {
+    toast.success('Appointment with psychologist confirmed!');
     onClose();
   };
   return (
