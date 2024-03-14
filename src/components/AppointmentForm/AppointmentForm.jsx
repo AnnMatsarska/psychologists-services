@@ -10,43 +10,54 @@ export const AppointmentForm = ({ psychologist, onClose }) => {
     email: '',
     comment: '',
   };
+  const phoneRegExp = /^\+380\d{9}$/;
 
   const validationSchema = yup.object({
     name: yup.string().required(),
-    number: yup.string().required(),
-    // time: yup.string().required(),
-    // email: yup.string().email('Invalid email').required(),
-    // comment: yup.string(),
+    number: yup
+      .string()
+      .matches(phoneRegExp, 'Phone number is not valid')
+      .required(),
+    time: yup.string().required(),
+    email: yup.string().email('Invalid email').required(),
+    comment: yup.string().required(),
   });
 
   const handleSubmit = () => {
     onClose();
   };
   return (
-    <>
-      <h3>Make an appointment with a psychologists</h3>
-      <p>
+    <div style={{ width: '472px' }}>
+      <h3 className={css.formTitle}>
+        Make an appointment with a psychologists
+      </h3>
+      <p className={css.formText}>
         You are on the verge of changing your life for the better. Fill out the
         short form below to book your personal appointment with a professional
         psychologist. We guarantee confidentiality and respect for your privacy.
       </p>
-      <p>Your psychologists</p>
-      <img
-        src={psychologist.avatar_url}
-        alt={psychologist.name}
-        width="44px"
-        height="44px"
-      />
-      <p>{psychologist.name}</p>
+      <div style={{ display: 'flex', gap: '14px', marginBottom: '40px' }}>
+        <img
+          src={psychologist.avatar_url}
+          alt={psychologist.name}
+          width="44px"
+          height="44px"
+          style={{ borderRadius: '15px' }}
+        />
+        <div>
+          <p className={css.itemText}>Your psychologists</p>
+          <p className={css.formItemName}>{psychologist.name}</p>
+        </div>
+      </div>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
       >
-        {({ errors, touched, values }) => (
+        {({ errors, touched }) => (
           <Form>
-            <div>
-              <div>
+            <div className={css.formWrapper}>
+              <div className={css.wrapper}>
                 <div
                   className={`${css.inputWrapper} ${
                     errors.name && touched.name ? css.inputError : ''
@@ -56,8 +67,8 @@ export const AppointmentForm = ({ psychologist, onClose }) => {
                     id="name"
                     type="name"
                     name="name"
-                    value={values.name}
                     placeholder="Name"
+                    className={css.input}
                   />
                 </div>
                 <ErrorMessage
@@ -66,21 +77,84 @@ export const AppointmentForm = ({ psychologist, onClose }) => {
                   className={css.errormessage}
                 />
               </div>
+              <div style={{ display: 'flex', gap: '8px' }}>
+                <div className={css.wrapper} style={{ width: '232px' }}>
+                  <div
+                    className={`${css.inputWrapper} ${
+                      errors.number && touched.number ? css.inputError : ''
+                    }`}
+                  >
+                    <Field
+                      id="number"
+                      type="tel"
+                      name="number"
+                      placeholder="+380"
+                      className={css.input}
+                    />
+                  </div>
+                  <ErrorMessage
+                    name="number"
+                    component="div"
+                    className={css.errormessage}
+                  />
+                </div>
+                <div className={css.wrapper} style={{ width: '232px' }}>
+                  <div
+                    className={`${css.inputWrapper} ${
+                      errors.number && touched.number ? css.inputError : ''
+                    }`}
+                  >
+                    <Field
+                      id="time"
+                      name="time"
+                      type="time"
+                      className={css.input}
+                    />
+                  </div>
+                  <ErrorMessage
+                    name="time"
+                    component="div"
+                    className={css.errormessage}
+                  />
+                </div>
+              </div>
               <div className={css.wrapper}>
                 <div
                   className={`${css.inputWrapper} ${
-                    errors.number && touched.number ? css.inputError : ''
+                    errors.email && touched.email ? css.inputError : ''
                   }`}
                 >
                   <Field
-                    id="number"
-                    type="tel"
-                    name="number"
-                    placeholder="+380"
+                    id="email"
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    className={css.input}
                   />
                 </div>
                 <ErrorMessage
-                  name="number"
+                  name="email"
+                  component="div"
+                  className={css.errormessage}
+                />
+              </div>
+              <div className={css.wrapper}>
+                <div
+                  style={{ height: '116px' }}
+                  className={`${css.inputWrapper} ${
+                    errors.email && touched.email ? css.inputError : ''
+                  }`}
+                >
+                  <Field
+                    id="comment"
+                    type="text"
+                    name="comment"
+                    placeholder="Comment"
+                    className={css.input}
+                  />
+                </div>
+                <ErrorMessage
+                  name="comment"
                   component="div"
                   className={css.errormessage}
                 />
@@ -92,6 +166,6 @@ export const AppointmentForm = ({ psychologist, onClose }) => {
           </Form>
         )}
       </Formik>
-    </>
+    </div>
   );
 };

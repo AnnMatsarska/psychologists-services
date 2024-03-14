@@ -56,7 +56,7 @@
     display: flex;
     align-items: baseline;
     justify-content: space-between;
-    width: 438px;
+    width: 100%;
     height: 52px;
     padding: 16px 18px;
     border: 1px solid rgba(25, 26, 21, 0.1);
