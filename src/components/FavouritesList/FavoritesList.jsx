@@ -10,6 +10,7 @@ import {
 import { PsychologistItem } from '../PsycologistItem/PsychologistItem';
 import { applyFilter } from '../../services/applyFilter';
 import { selectFavorites } from '../../redux/favorites/slice';
+import { Link } from 'react-router-dom';
 
 export const FavoritesList = () => {
   const favorites = useSelector(selectFavorites);
@@ -34,16 +35,28 @@ export const FavoritesList = () => {
   return (
     <>
       {displayPsychologists.length > 0 && <Filter />}
-      <ul className={css.list}>
-        {displayPsychologists.map(psychologist => {
-          return (
-            <PsychologistItem
-              key={psychologist.id}
-              psychologist={psychologist}
-            />
-          );
-        })}
-      </ul>
+      {displayPsychologists.length === 0 ? (
+        <div className={css.emptyWrapper}>
+          <p>Your list of favorite psychologists is empty.</p>
+          <p>
+            <Link to="/psychologists" className={css.link}>
+              Explore our psychologists
+            </Link>{' '}
+            to find someone you'd like to add.
+          </p>
+        </div>
+      ) : (
+        <ul className={css.list}>
+          {displayPsychologists.map(psychologist => {
+            return (
+              <PsychologistItem
+                key={psychologist.id}
+                psychologist={psychologist}
+              />
+            );
+          })}
+        </ul>
+      )}
       {itemsNeedToBeDisplayed ? (
         <button onClick={handleLoadMore} className={css.loadMoreBtn}>
           Load More
