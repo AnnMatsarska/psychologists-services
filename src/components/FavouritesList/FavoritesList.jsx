@@ -33,7 +33,7 @@ export const FavoritesList = () => {
 
   return (
     <>
-      <Filter />
+      {displayPsychologists.length > 0 && <Filter />}
       <ul className={css.list}>
         {displayPsychologists.map(psychologist => {
           return (
