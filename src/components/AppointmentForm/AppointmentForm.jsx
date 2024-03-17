@@ -105,7 +105,7 @@ export const AppointmentForm = ({ psychologist, onClose }) => {
                 <div className={css.wrapper} style={{ width: '232px' }}>
                   <div
                     className={`${css.inputWrapper} ${
-                      errors.number && touched.number ? css.inputError : ''
+                      errors.time && touched.time ? css.inputError : ''
                     }`}
                   >
                     <Field
