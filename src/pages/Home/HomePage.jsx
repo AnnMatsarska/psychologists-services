@@ -24,22 +24,30 @@ const HomePage = () => {
             <span className={css.buttonSpan}>Get started</span> <Arrow />
           </NavLink>
         </div>
-        <span className={css.groupSpan}>
-          <Group />
-        </span>
-        <span className={css.violetSpan}>
-          <Question className={css.iconQuestion} />
-        </span>
-        <div className={css.greenWrapper}>
-          <div className={css.iconWrapper}>
-            <Check />
-          </div>
-          <div>
-            <p className={css.greenWrText}>Experienced psychologists</p>
-            <p className={css.greenWrNumber}>15,000</p>
+        <div className={css.imgBlockWrapper}>
+          <img
+            src={homeImg}
+            className={css.homeImg}
+            alt="home img"
+            width="464px"
+            height="526px"
+          />
+          <span className={css.groupSpan}>
+            <Group />
+          </span>
+          <span className={css.violetSpan}>
+            <Question className={css.iconQuestion} />
+          </span>
+          <div className={css.greenWrapper}>
+            <div className={css.iconWrapper}>
+              <Check />
+            </div>
+            <div>
+              <p className={css.greenWrText}>Experienced psychologists</p>
+              <p className={css.greenWrNumber}>15,000</p>
+            </div>
           </div>
         </div>
-        <img src={homeImg} className={css.homeImg} alt="home img"></img>
       </section>
     </div>
   );

@@ -2,14 +2,15 @@
     display: flex;
     gap: 125px;
     padding-top: 78px;
+    align-items: center;
 }
 
 .container {
     margin: 0 auto;
     max-width: 1440px;
     padding: 0px 128px;
-    background: linear-gradient(to top left, var(--primary-color-green), rgba(25, 26, 21, 0) 53%);
-    height: calc(100vh - 99px);
+    background: linear-gradient(to top left, var(--primary-color-green), rgba(25, 26, 21, 0) 40%);
+    min-height: 100vh;
 }
 
 .sectionTitle {
@@ -33,64 +34,21 @@
     color: var(--primary-color-green);
 }
 
+.imgBlockWrapper {
+    position: relative;
+}
+
+
 .homeImg {
     border-radius: 10px;
-    width: 464px;
-    height: 526px;
-}
-
-.button {
-    padding: 18px 50px;
-    cursor: pointer;
-    border: none;
-    border-radius: 30px;
-    background-color: var(--primary-color-green);
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 1.2;
-    color: var(--secondary-color-white);
-    transition: all 300ms;
-
-    &:hover,
-    &:focus {
-        background-color: var(--secondary-color-green);
-    }
-}
-
-
-.buttonSpan {
-    margin-right: 18px;
-}
-
-.violetSpan {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    left: 815px;
-    top: 369.35px;
-    transform: rotate(-15.00deg);
-    border-radius: 10px;
-    background: rgb(69, 53, 175);
-}
-
-.iconQuestion {
-    position: absolute;
-    transform: rotate(15.00deg);
-    top: 30%;
-    left: 36%
-}
-
-.groupSpan {
-    position: absolute;
-    left: 1295px;
-    top: 212px;
-
+    /* width: 464px;
+    height: 526px; */
 }
 
 .greenWrapper {
     position: absolute;
-    top: 68%;
-    right: 26%;
+    top: 340px;
+    left: -95px;
     display: flex;
     gap: 16px;
     padding: 32px;
@@ -120,4 +78,52 @@
     font-weight: 700;
     line-height: 1.2;
     color: var(--secondary-color-white);
+}
+
+.button {
+    display: inline-block;
+    padding: 18px 50px;
+    cursor: pointer;
+    border: none;
+    border-radius: 30px;
+    background-color: var(--primary-color-green);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--secondary-color-white);
+    transition: all 300ms;
+
+    &:hover,
+    &:focus {
+        background-color: var(--secondary-color-green);
+    }
+}
+
+
+.buttonSpan {
+    margin-right: 18px;
+}
+
+.violetSpan {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: -30px;
+    top: 180px;
+    transform: rotate(-15.00deg);
+    border-radius: 10px;
+    background: rgb(69, 53, 175);
+}
+
+.iconQuestion {
+    position: absolute;
+    transform: rotate(15.00deg);
+    top: 30%;
+    left: 36%
+}
+
+.groupSpan {
+    position: absolute;
+    left: 448px;
+    top: 50px;
 }
