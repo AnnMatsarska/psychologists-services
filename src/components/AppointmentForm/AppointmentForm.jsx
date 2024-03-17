@@ -1,6 +1,7 @@
 import css from './AppointmentForm.module.css';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
+import { CustomTimeField } from './CustomTimeField';
 
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -108,12 +109,11 @@ export const AppointmentForm = ({ psychologist, onClose }) => {
                       errors.time && touched.time ? css.inputError : ''
                     }`}
                   >
-                    <Field
-                      id="time"
-                      name="time"
-                      type="time"
-                      className={css.input}
-                    />
+                    <Field name="time">
+                      {({ field, form }) => (
+                        <CustomTimeField field={field} form={form} />
+                      )}
+                    </Field>
                   </div>
                   <ErrorMessage
                     name="time"
