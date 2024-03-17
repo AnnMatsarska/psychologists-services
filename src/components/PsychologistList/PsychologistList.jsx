@@ -46,7 +46,7 @@ export const PsychologistList = () => {
 
   return (
     <>
-      {displayPsychologists && (
+      {displayPsychologists.length !== 0 ? (
         <ul className={css.list}>
           {displayPsychologists.map(psychologist => (
             <PsychologistItem
@@ -55,6 +55,13 @@ export const PsychologistList = () => {
             />
           ))}
         </ul>
+      ) : (
+        <div className={css.emptyWrapper}>
+          <p>
+            We couldn't find any psychologists that match your search criteria
+            for "{filter}".
+          </p>
+        </div>
       )}
       {itemsNeedToBeDisplayed ? (
         <button onClick={handleLoadMore} className={css.loadMoreBtn}>

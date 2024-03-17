@@ -32,3 +32,20 @@
     line-height: 1.28;
     color: var(--secondary-color-gray)
 }
+
+.emptyWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0 auto;
+    width: 510px;
+    padding: 24px;
+    border-radius: 24px;
+    background: var(--secondary-color-white);
+
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--secondary-color-black);
+}
