@@ -48,64 +48,66 @@ export const PsychologistItem = ({ psychologist }) => {
 
   return (
     <li className={css.item}>
-      <div style={{ display: 'flex', gap: '24px' }}>
-        <div className={css.imgBorder}>
-          <img
-            className={css.itemImage}
-            src={psychologist.avatar_url}
-            alt={psychologist.name}
-            width="96px"
-            height="96px"
-          />
-        </div>
-        <div style={{ marginLeft: '144px' }}>
-          <p className={css.itemTitle}>Psychologist</p>
-          <p className={css.itemName}>{psychologist.name}</p>
-          <div className={css.infoWrapper}>
-            <p className={css.itemMainData}>
-              <span className={css.spanItem}>Experience: </span>
-              {psychologist.experience}
-            </p>
-            <p className={css.itemMainData}>
-              <span className={css.spanItem}>License: </span>
-              {psychologist.license}
-            </p>
-            <p className={css.itemMainData}>
-              <span className={css.spanItem}>Specialization: </span>
-              {psychologist.specialization}
-            </p>
-            <p className={css.itemMainData}>
-              <span className={css.spanItem}>Initial_consultation: </span>
-              {psychologist.initial_consultation}
-            </p>
-          </div>
-          <p className={css.itemAbout}>{psychologist.about}</p>
-          {!showAdditionalInfo ? (
-            <button className={css.readMoreBtn} onClick={handleReadMoreClick}>
-              Read More
-            </button>
-          ) : null}
-          {/* <button className={css.readMoreBtn} onClick={handleReadMoreClick}>
-            Read More
-          </button> */}
-          {showAdditionalInfo && <ItemMoreInfo psychologist={psychologist} />}
-        </div>
+      <div className={css.imgBorder}>
+        <img
+          className={css.itemImage}
+          src={psychologist.avatar_url}
+          alt={psychologist.name}
+          width="96"
+          height="96"
+        />
       </div>
-      <div className={css.endWrapper}>
-        <Star />
-        <div style={{ display: 'flex' }}>
-          <p className={css.itemData}>Rating: {psychologist.rating}</p>
-          <p className={css.itemData}>
-            Price / 1 hour:{' '}
-            <span className={css.priceSpan}>
-              {psychologist.price_per_hour}$
-            </span>
+      <div style={{ width: '100%' }}>
+        <div className={css.headWrapper}>
+          <p className={css.itemTitle}>Psychologist</p>
+          <ul className={css.listStatWrapper}>
+            <li className={css.itemData}>
+              <Star />
+              Rating: {psychologist.rating}
+            </li>
+            <li className={css.itemData}>
+              Price / 1 hour:
+              <span className={css.priceSpan}>
+                {' '}
+                {psychologist.price_per_hour}$
+              </span>
+            </li>
+          </ul>
+          <button
+            className={css.btnHeart}
+            type="button"
+            onClick={handleFavClick}
+          >
+            {isFavorite ? <ActiveHeart /> : <NormalHeart />}
+          </button>
+        </div>
+        <h2 className={css.itemName}>{psychologist.name}</h2>
+        <div className={css.infoWrapper}>
+          <p className={css.itemMainData}>
+            <span className={css.spanItem}>Experience: </span>
+            {psychologist.experience}
+          </p>
+          <p className={css.itemMainData}>
+            <span className={css.spanItem}>License: </span>
+            {psychologist.license}
+          </p>
+          <p className={css.itemMainData}>
+            <span className={css.spanItem}>Specialization: </span>
+            {psychologist.specialization}
+          </p>
+          <p className={css.itemMainData}>
+            <span className={css.spanItem}>Initial_consultation: </span>
+            {psychologist.initial_consultation}
           </p>
         </div>
+        <p className={css.itemAbout}>{psychologist.about}</p>
+        {!showAdditionalInfo ? (
+          <button className={css.readMoreBtn} onClick={handleReadMoreClick}>
+            Read More
+          </button>
+        ) : null}
+        {showAdditionalInfo && <ItemMoreInfo psychologist={psychologist} />}
       </div>
-      <button className={css.btnHeart} type="button" onClick={handleFavClick}>
-        {isFavorite ? <ActiveHeart /> : <NormalHeart />}
-      </button>
     </li>
   );
 };
