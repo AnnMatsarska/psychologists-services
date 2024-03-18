@@ -14,6 +14,11 @@ export const CustomTimeField = ({ field, form }) => {
     setShowTimeDropdown(false);
   };
 
+  const formatTime = time => {
+    const [hours, minutes] = time.split(':');
+    return { hours, minutes };
+  };
+
   return (
     <>
       <div
@@ -21,23 +26,33 @@ export const CustomTimeField = ({ field, form }) => {
         onClick={() => setShowTimeDropdown(!showTimeDropdown)}
         type="button"
       >
-        {selectedTime || '00:00'}
+        {selectedTime ? (
+          <div>
+            <span className={css.time}>{formatTime(selectedTime).hours}</span>:
+            <span className={css.time}>{formatTime(selectedTime).minutes}</span>
+          </div>
+        ) : (
+          <span>00 : 00</span>
+        )}
         <Clock />
       </div>
       {showTimeDropdown && (
         <>
-          <ul className={css.timeDropdown}>
+          <div className={css.timeDropdown}>
             <p style={{ marginBottom: '16px' }}>Meeting time</p>
-            {timeOptions.map(time => (
-              <li
-                key={time}
-                className={css.timeOption}
-                onClick={() => handleTimeSelect(time)}
-              >
-                {time}
-              </li>
-            ))}
-          </ul>
+            <ul className={css.timeDropdownList}>
+              {timeOptions.map(time => (
+                <li
+                  key={time}
+                  className={css.timeOption}
+                  onClick={() => handleTimeSelect(time)}
+                >
+                  <span className={css.time}>{formatTime(time).hours}</span>:
+                  <span className={css.time}>{formatTime(time).minutes}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </>
       )}
     </>
