@@ -4,6 +4,8 @@ import * as yup from 'yup';
 import css from './AuthForm.module.css';
 import { ReactComponent as OpenEye } from '../../images/eye.svg';
 import { ReactComponent as ClosedEye } from '../../images/eye-off.svg';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
@@ -68,13 +70,11 @@ export const AuthForm = ({ formTitle }) => {
           values.password
         );
         const user = userCredential.user;
-        console.log(user);
+        toast.success(`${user.displayName}, you have successfully logged in!`);
         navigate('/psychologists');
       }
-    } catch (error) {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.error('Authentication error:', errorCode, errorMessage);
+    } catch {
+      toast.error('Invalid data. Sign in is failed. Please try again.');
     }
 
     resetForm();

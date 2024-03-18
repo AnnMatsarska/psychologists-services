@@ -10,6 +10,7 @@ import { auth } from '../../firebase/config';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { setUser } from '../../redux/auth/authSlice';
+import { resetItems } from '../../redux/favorites/slice';
 
 export const UserMenu = () => {
   const { currentUser } = useSelector(selectUser);
@@ -20,6 +21,7 @@ export const UserMenu = () => {
     signOut(auth)
       .then(() => {
         dispatch(setUser(null));
+        dispatch(resetItems());
         navigate('/');
       })
       .catch(error => {

@@ -1,6 +1,7 @@
-import css from './AppointmentForm.module.css';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
+
+import css from './AppointmentForm.module.css';
 import { CustomTimeField } from './CustomTimeField';
 
 import { toast } from 'react-toastify';

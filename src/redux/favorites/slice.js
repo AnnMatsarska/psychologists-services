@@ -14,10 +14,13 @@ const favoritesSlice = createSlice({
     deleteItem(state, action) {
       state.items = state.items.filter(item => item.id !== action.payload);
     },
+    resetItems(state) {
+      state.items = [];
+    },
   },
 });
 
-export const { addItem, deleteItem } = favoritesSlice.actions;
+export const { addItem, deleteItem, resetItems } = favoritesSlice.actions;
 
 export const selectFavorites = state => state.favorites.items;
 
