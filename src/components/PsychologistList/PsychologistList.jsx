@@ -63,11 +63,11 @@ export const PsychologistList = () => {
           </p>
         </div>
       )}
-      {itemsNeedToBeDisplayed ? (
+      {itemsNeedToBeDisplayed && (
         <button onClick={handleLoadMore} className={css.loadMoreBtn}>
           Load More
         </button>
-      ) : null}
+      )}
     </>
   );
 };
