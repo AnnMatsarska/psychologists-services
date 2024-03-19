@@ -29,6 +29,12 @@ code {
     monospace;
 }
 
+.container {
+  margin: 0 auto;
+  max-width: 1440px;
+  padding: 0px 128px;
+}
+
 h1,
 h2,
 h3,

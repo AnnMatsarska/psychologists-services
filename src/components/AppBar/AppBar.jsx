@@ -11,7 +11,7 @@ export const AppBar = () => {
 
   return (
     <header className={css.header}>
-      <div className={css.container}>
+      <div className="container">
         <nav className={css.navWrapper}>
           <NavLink to="/">
             <p className={css.logoText}>

@@ -5,7 +5,7 @@ import { ScrollUp } from '../../components/ScrollUp/ScrollUp';
 
 const FavoritePage = () => {
   return (
-    <div className={css.container}>
+    <div className="container">
       <section className={css.section}>
         <FavoritesList />
         <ScrollUp />

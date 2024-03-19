@@ -1,3 +1,8 @@
+.layout {
+    background: linear-gradient(to top left, var(--primary-color-green), rgba(25, 26, 21, 0) 40%);
+    min-height: 100vh;
+}
+
 .section {
     display: flex;
     gap: 125px;
@@ -5,13 +10,6 @@
     align-items: center;
 }
 
-.container {
-    margin: 0 auto;
-    max-width: 1440px;
-    padding: 0px 128px;
-    background: linear-gradient(to top left, var(--primary-color-green), rgba(25, 26, 21, 0) 40%);
-    min-height: 100vh;
-}
 
 .sectionTitle {
     width: 595px;
@@ -41,8 +39,6 @@
 
 .homeImg {
     border-radius: 10px;
-    /* width: 464px;
-    height: 526px; */
 }
 
 .greenWrapper {
