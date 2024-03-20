@@ -11,9 +11,9 @@
 .imgBorder {
     display: block;
     position: relative;
-    width: 120px;
-    height: 120px;
-    padding: 11px;
+    width: 126px;
+    height: 114px;
+    padding: 12px;
     border: 2px solid rgba(84, 190, 150, 0.2);
     border-radius: 30px;
 
@@ -23,7 +23,7 @@
         content: "";
         width: 9px;
         height: 9px;
-        left: 95px;
+        left: 85px;
         top: 10px;
         border-radius: 50%;
         background-color: rgb(56, 205, 62);
@@ -33,7 +33,6 @@
 
 
 .itemImage {
-    display: block;
     border-radius: 15px;
 }
 

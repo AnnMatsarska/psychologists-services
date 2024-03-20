@@ -19,6 +19,7 @@ body {
   margin: 0;
   background-color: rgba(25, 26, 21, 0.05);
   font-family: "Inter", sans-serif;
+  font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -54,6 +55,7 @@ ol {
 img {
   display: block;
   height: auto;
+  max-width: 100%;
 }
 
 a {

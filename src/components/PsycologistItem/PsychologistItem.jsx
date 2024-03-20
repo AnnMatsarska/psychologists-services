@@ -53,8 +53,8 @@ export const PsychologistItem = ({ psychologist }) => {
           className={css.itemImage}
           src={psychologist.avatar_url}
           alt={psychologist.name}
-          width="96"
-          height="96"
+          width={96}
+          height={96}
         />
       </div>
       <div style={{ width: '100%' }}>

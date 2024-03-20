@@ -5,13 +5,12 @@ import { ToastContainer } from 'react-toastify';
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 
-import css from './SharedLayout.module.css';
 import 'react-toastify/dist/ReactToastify.css';
 
 export const SharedLayout = () => {
   return (
     <>
-      <div className={css.layout}>
+      <div>
         <AppBar />
         <ToastContainer
           position="top-center"

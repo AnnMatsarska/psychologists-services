@@ -1,4 +1,3 @@
-import homeImg from '../../images/home-image-min.webp';
 import css from './HomePage.module.css';
 import { ReactComponent as Arrow } from '../../images/arrow.svg';
 import { ReactComponent as Check } from '../../images/check.svg';
@@ -26,23 +25,10 @@ const HomePage = () => {
             </NavLink>
           </div>
           <div className={css.imgBlockWrapper}>
-            <img
-              src={homeImg}
-              className={css.homeImg}
-              alt="home img"
-              width="464px"
-              height="526px"
-            />
-            <span className={css.groupSpan}>
-              <Group />
-            </span>
-            <span className={css.violetSpan}>
-              <Question className={css.iconQuestion} />
-            </span>
+            <Group className={css.groupSpan} />
+            <Question className={css.iconQuestion} />
             <div className={css.greenWrapper}>
-              <div className={css.iconWrapper}>
-                <Check />
-              </div>
+              <Check className={css.iconWrapper} />
               <div>
                 <p className={css.greenWrText}>Experienced psychologists</p>
                 <p className={css.greenWrNumber}>15,000</p>
