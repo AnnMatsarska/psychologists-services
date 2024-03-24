@@ -30,6 +30,8 @@ comprises three main pages: Home, Psychologists, and Favorites.
 - Psychologist Data Management: Psychologist details are stored in a Firebase
   Realtime Database, including name, avatar, experience, reviews, price, rating,
   license, specialization, and description.
+- Filter Option: Users can refine psychologist listings using filters based on
+  various criteria, enhancing search capabilities.
 - Favorite Psychologists: Authenticated users can mark psychologists as
   favorites, with the application storing this information in localStorage.
 - Detailed Profiles: Users can view detailed psychologist profiles, including
