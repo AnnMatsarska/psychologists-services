@@ -1,13 +1,30 @@
 .list {
     display: flex;
-    gap: 40px;
-    margin-left: -130px;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+
+
+    @media screen and (max-width: 1054px) {
+        gap: 10px;
+
+    }
+
+    /* @media screen and (min-width: 1245px) {
+        margin-left: -130px;
+    } */
+
+
 }
 
 .listLoggedIn {
     display: flex;
     gap: 40px;
     margin-left: 0;
+
+    @media screen and (max-width: 1054px) {
+        gap: 10px;
+        flex-direction: column;
+    }
 }
 
 .linkItem {
@@ -29,7 +46,6 @@
     border-radius: 50%;
     background-color: var(--primary-color-green);
 }
-
 
 .active {
     color: var(--secondary-color-black);

@@ -13,8 +13,8 @@ export const AppBar = () => {
     <header className={css.header}>
       <div className="container">
         <nav className={css.navWrapper}>
-          <NavLink to="/">
-            <p className={css.logoText}>
+          <NavLink to="/" className={css.logoLink}>
+            <p>
               <span className={css.logoSpan}>psychologists.</span>services
             </p>
           </NavLink>

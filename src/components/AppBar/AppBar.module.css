@@ -1,19 +1,23 @@
 .header {
     width: 100%;
-    padding: 24px 0px;
+    padding: 1.5rem 0.5rem;
     border-bottom: 1px solid rgba(25, 26, 21, 0.1);
+
+    @media screen and (min-width: 768px) {
+        padding: 1.5rem 8rem;
+    }
 }
 
+.logoLink {
+    display: none;
 
-.logoText {
-    font-weight: 600;
-    font-size: 1.25rem;
-    line-height: 1.2;
-    color: var(--secondary-color-black);
-    /* 
-    @media screen and (max-width: 768px) {
-        font-size: 1.5rem;
-    } */
+    @media screen and (min-width: 768px) {
+        display: block;
+        font-weight: 600;
+        font-size: 1.25rem;
+        line-height: 1.2;
+        color: var(--secondary-color-black);
+    }
 }
 
 .logoSpan {

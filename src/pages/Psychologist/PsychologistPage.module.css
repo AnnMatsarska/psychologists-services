@@ -1,5 +1,4 @@
 .section {
     height: 100%;
-    padding-top: 64px;
-    padding-bottom: 64px;
+    padding: 64px 128px;
 }

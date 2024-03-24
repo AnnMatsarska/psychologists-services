@@ -17,11 +17,11 @@ export const SharedLayout = () => {
           autoClose={3000}
           hideProgressBar={true}
         />
-        <main>
+        {/* <main>
           <Suspense fallback={<Loader />}>
             <Outlet />
           </Suspense>
-        </main>
+        </main> */}
       </div>
     </>
   );

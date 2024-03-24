@@ -33,7 +33,7 @@ code {
 .container {
   margin: 0 auto;
   max-width: 1440px;
-  padding: 0px 128px;
+  /* padding: 0px 8px; */
 }
 
 h1,
