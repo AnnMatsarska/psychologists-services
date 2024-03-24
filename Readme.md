@@ -2,6 +2,8 @@
 
 ![Main page screenshot](./src/images/home.jpg)
 
+![Authenticated psychologist page screenshot](./src/images/listpage.jpg)
+
 ## Project Description: Psychologist Services Application
 
 This project entails creating a web application for accessing psychologist
