@@ -9,22 +9,23 @@
 
     } */
 
-    /* @media screen and (min-width: 1245px) {
+    @media screen and (min-width: 1245px) {
         margin-left: -130px;
-    } */
+    }
 
 
 }
 
 .listLoggedIn {
     display: flex;
-    gap: 2.5rem;
+    flex-wrap: wrap;
+    gap: 0.625rem;
     margin-left: 0;
 
-    /* @media screen and (max-width: 1054px) {
-        gap: 10px;
-        flex-direction: column;
-    } */
+    @media screen and (min-width: 568px) {
+        gap: 2.5rem;
+    }
+
 }
 
 .linkItem {
