@@ -9,22 +9,22 @@
 }
 
 .imgBorder {
-    display: block;
     position: relative;
-    width: 126px;
-    height: 114px;
-    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 120px;
+    min-width: 120px;
     border: 2px solid rgba(84, 190, 150, 0.2);
     border-radius: 30px;
-
 
     &::after {
         position: absolute;
         content: "";
         width: 9px;
         height: 9px;
-        left: 85px;
-        top: 10px;
+        left: 92px;
+        top: 7px;
         border-radius: 50%;
         background-color: rgb(56, 205, 62);
         border: 3px solid white
@@ -34,6 +34,8 @@
 
 .itemImage {
     border-radius: 15px;
+    height: 96px;
+    width: 96px;
 }
 
 
