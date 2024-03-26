@@ -6,13 +6,13 @@ import { ScrollUp } from '../../components/ScrollUp/ScrollUp';
 
 const PsychologistPage = () => {
   return (
-    <div className="container">
-      <section className={css.section}>
+    <section className={css.section}>
+      <div className="container">
         <Filter />
         <PsychologistList />
         <ScrollUp />
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };
 
