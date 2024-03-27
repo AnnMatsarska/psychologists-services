@@ -58,6 +58,7 @@
 
 .appointmentButton {
     padding: 14px 32px;
+    margin-bottom: 24px;
     border: none;
     border-radius: 30px;
     background-color: var(--primary-color-green);

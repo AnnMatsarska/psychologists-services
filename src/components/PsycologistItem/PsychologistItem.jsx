@@ -105,12 +105,17 @@ export const PsychologistItem = ({ psychologist }) => {
           </p>
         </div>
         <p className={css.itemAbout}>{psychologist.about}</p>
-        {!showAdditionalInfo ? (
+        {!showAdditionalInfo && (
           <button className={css.readMoreBtn} onClick={handleReadMoreClick}>
             Read More
           </button>
-        ) : null}
+        )}
         {showAdditionalInfo && <ItemMoreInfo psychologist={psychologist} />}
+        {showAdditionalInfo && (
+          <button className={css.readMoreBtn} onClick={handleReadMoreClick}>
+            Read Less
+          </button>
+        )}
       </div>
     </li>
   );
