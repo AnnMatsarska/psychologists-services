@@ -32,7 +32,7 @@ export const CustomTimeField = ({ field, form }) => {
             <span className={css.time}>{formatTime(selectedTime).minutes}</span>
           </div>
         ) : (
-          <span>00 : 00</span>
+          <span className={css.timeSpan}>00 : 00</span>
         )}
         <Clock />
       </div>

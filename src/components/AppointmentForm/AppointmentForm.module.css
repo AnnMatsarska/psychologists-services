@@ -70,6 +70,10 @@
     &:focus {
         outline: none;
     }
+
+    @media only screen and (max-width: 550px) {
+        font-size: 12px;
+    }
 }
 
 .errormessage {
@@ -78,6 +82,11 @@
     left: 0;
     color: red;
     font-size: 14px;
+
+    @media only screen and (max-width: 550px) {
+        font-size: 9px;
+        bottom: -10px;
+    }
 }
 
 .inputWrapper {
@@ -91,6 +100,10 @@
     border: 1px solid rgba(25, 26, 21, 0.1);
     border-radius: 12px;
     background-color: inherit;
+
+    @media only screen and (max-width: 550px) {
+        padding: 16px 8px;
+    }
 }
 
 .inputError {
@@ -155,6 +168,13 @@
         width: 140px;
         left: 0px;
         top: 60px;
+        font-size: 12px;
+    }
+}
+
+.timeSpan {
+    @media only screen and (max-width: 550px) {
+        font-size: 12px;
     }
 }
 
