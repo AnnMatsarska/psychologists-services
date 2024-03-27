@@ -4,7 +4,7 @@
     align-items: center;
     transform: rotate(180deg);
     bottom: 20px;
-    right: 50px;
+    right: 20px;
     background-color: var(--primary-color-green);
     padding: 20px;
     border-radius: 50%;

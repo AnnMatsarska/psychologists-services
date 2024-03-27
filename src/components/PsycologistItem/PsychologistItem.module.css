@@ -1,11 +1,17 @@
 .item {
     display: flex;
+    flex-wrap: wrap;
     gap: 24px;
     width: 100%;
     padding: 24px;
     margin: 0 auto;
     border-radius: 24px;
     background: var(--secondary-color-white);
+
+
+    @media screen and (min-width: 1000px) {
+        flex-wrap: nowrap;
+    }
 }
 
 .imgBorder {
@@ -41,9 +47,14 @@
 
 .headWrapper {
     display: flex;
+    flex-wrap: wrap;
     margin-bottom: 8px;
     gap: 8px;
     align-items: center;
+
+    @media screen and (min-width: 1440px) {
+        flex-wrap: nowrap;
+    }
 }
 
 .itemTitle {
@@ -70,7 +81,7 @@
     line-height: 1.25;
     color: var(--secondary-color-black);
 
-    &:not(:last-child)::after {
+    &:first-child::after {
         content: '';
         vertical-align: middle;
         display: inline-block;
@@ -78,8 +89,20 @@
         height: 16px;
         margin: 0 16px 0 12px;
         background-color: rgba(25, 26, 21, 0.2);
+
+    }
+
+    @media screen and (min-width: 320px) and (max-width: 415px) {
+        font-size: 12px;
+        gap: 0px;
+
+        &:first-child::after {
+            margin: 0 7px 0 7px;
+        }
     }
 }
+
+
 
 .priceSpan {
     color: rgb(56, 205, 62);
@@ -90,6 +113,13 @@
     border: none;
     cursor: pointer;
     outline: none;
+}
+
+.heartIcon {
+    @media screen and (min-width: 320px) and (max-width: 415px) {
+        width: 18px;
+        height: 18px;
+    }
 }
 
 .itemName {

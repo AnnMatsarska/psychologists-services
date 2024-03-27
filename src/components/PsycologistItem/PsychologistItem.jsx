@@ -70,14 +70,27 @@ export const PsychologistItem = ({ psychologist }) => {
                 {psychologist.price_per_hour}$
               </span>
             </li>
+            <li className={css.itemData}>
+              <button
+                className={css.btnHeart}
+                type="button"
+                onClick={handleFavClick}
+              >
+                {isFavorite ? (
+                  <ActiveHeart className={css.heartIcon} />
+                ) : (
+                  <NormalHeart className={css.heartIcon} />
+                )}
+              </button>
+            </li>
           </ul>
-          <button
+          {/* <button
             className={css.btnHeart}
             type="button"
             onClick={handleFavClick}
           >
             {isFavorite ? <ActiveHeart /> : <NormalHeart />}
-          </button>
+          </button> */}
         </div>
         <h2 className={css.itemName}>{psychologist.name}</h2>
         <div className={css.infoWrapper}>
