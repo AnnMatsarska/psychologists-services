@@ -1,11 +1,10 @@
 .list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-end;
     gap: 1.5rem;
 
     @media screen and (max-width: 768px) {
-
         gap: 0.625rem;
     }
 }
