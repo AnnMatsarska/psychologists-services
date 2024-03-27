@@ -1,3 +1,4 @@
 .section {
-    padding: 64px 128px;
+    height: 100%;
+    padding: 64px 0;
 }

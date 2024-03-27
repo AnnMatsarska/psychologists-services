@@ -33,7 +33,7 @@ export const AppointmentForm = ({ psychologist, onClose }) => {
     onClose();
   };
   return (
-    <div style={{ width: '472px' }}>
+    <div className={css.appFormContainer}>
       <h3 className={css.formTitle}>
         Make an appointment with a psychologists
       </h3>
@@ -151,8 +151,9 @@ export const AppointmentForm = ({ psychologist, onClose }) => {
                   }`}
                 >
                   <Field
+                    as="textarea"
                     id="comment"
-                    type="text"
+                    type="textarea"
                     name="comment"
                     placeholder="Comment"
                     className={css.input}

@@ -1,8 +1,21 @@
+.appFormContainer {
+    width: 100%;
+    max-width: 472px;
+
+    @media only screen and (max-width: 550px) {
+        max-width: 240px;
+    }
+}
+
 .formTitle {
     margin-bottom: 20px;
     font-size: 40px;
     font-weight: 500;
     line-height: 1.2;
+
+    @media only screen and (max-width: 550px) {
+        font-size: 34px;
+    }
 }
 
 .formText {
@@ -11,6 +24,10 @@
     font-size: 16px;
     font-weight: 400;
     line-height: 1.25;
+
+    @media only screen and (max-width: 550px) {
+        font-size: 12px;
+    }
 }
 
 .itemText {
@@ -88,7 +105,7 @@
     border: none;
     border-radius: 30px;
     background-color: var(--primary-color-green);
-    padding: 16px 191px;
+    padding: 16px 0;
 
     font-size: 16px;
     font-weight: 500;
@@ -103,6 +120,7 @@
     &:focus {
         background-color: var(--secondary-color-green);
     }
+
 }
 
 .timeDropdownHeader {
@@ -111,8 +129,6 @@
     cursor: pointer;
     justify-content: space-between;
     width: 100%;
-    /* color: rgba(25, 26, 21, 0.6); */
-
 }
 
 .timeDropdown {
@@ -134,6 +150,12 @@
     font-size: 16px;
     font-weight: 500;
     line-height: 1.5;
+
+    @media only screen and (max-width: 550px) {
+        width: 140px;
+        left: 0px;
+        top: 60px;
+    }
 }
 
 .timeDropdownList {

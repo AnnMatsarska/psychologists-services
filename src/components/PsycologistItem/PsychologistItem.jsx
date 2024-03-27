@@ -84,13 +84,6 @@ export const PsychologistItem = ({ psychologist }) => {
               </button>
             </li>
           </ul>
-          {/* <button
-            className={css.btnHeart}
-            type="button"
-            onClick={handleFavClick}
-          >
-            {isFavorite ? <ActiveHeart /> : <NormalHeart />}
-          </button> */}
         </div>
         <h2 className={css.itemName}>{psychologist.name}</h2>
         <div className={css.infoWrapper}>

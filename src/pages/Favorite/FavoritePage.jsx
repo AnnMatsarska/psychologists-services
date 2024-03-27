@@ -5,12 +5,12 @@ import { ScrollUp } from '../../components/ScrollUp/ScrollUp';
 
 const FavoritePage = () => {
   return (
-    <div className="container">
-      <section className={css.section}>
+    <section className={css.section}>
+      <div className="container">
         <FavoritesList />
         <ScrollUp />
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };
 

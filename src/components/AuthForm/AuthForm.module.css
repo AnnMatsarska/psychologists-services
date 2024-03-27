@@ -1,5 +1,10 @@
 .formDiv {
-    width: 439px;
+    width: 100%;
+    max-width: 439px;
+
+    @media only screen and (max-width: 550px) {
+        max-width: 240px;
+    }
 }
 
 .formTitle {
@@ -83,7 +88,7 @@
     border: none;
     border-radius: 30px;
     background-color: var(--primary-color-green);
-    padding: 16px 191px;
+    padding: 16px 0;
 
     font-size: 16px;
     font-weight: 500;
