@@ -1,13 +1,7 @@
 .list {
     display: flex;
     flex-wrap: wrap;
-    gap: 2.5rem;
-
-
-    /* @media screen and (max-width: 1054px) {
-        gap: 10px;
-
-    } */
+    gap: 40px;
 
     @media screen and (min-width: 1245px) {
         margin-left: -130px;
@@ -19,18 +13,17 @@
 .listLoggedIn {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.625rem;
+    gap: 10px;
     margin-left: 0;
 
     @media screen and (min-width: 580px) {
-        gap: 2.5rem;
+        gap: 40px;
     }
 
 }
 
 .linkItem {
     position: relative;
-    font-size: 1rem;
     font-weight: 400;
     color: var(--secondary-color-black);
 }
@@ -40,10 +33,10 @@
     content: "";
     position: absolute;
     left: 50%;
-    top: 1.5rem;
+    top: 120%;
     transform: translate(-50%, -50%);
-    width: 0.5rem;
-    height: 0.5rem;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
     background-color: var(--primary-color-green);
 }

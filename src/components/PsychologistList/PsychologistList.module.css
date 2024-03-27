@@ -2,8 +2,6 @@
     display: flex;
     flex-wrap: wrap;
     gap: 32px;
-    /* width: 100%; */
-    /* max-width: 1184px; */
     margin-bottom: 64px;
 }
 
@@ -47,7 +45,6 @@
     background: var(--secondary-color-white);
 
     text-align: center;
-    font-size: 16px;
     font-weight: 500;
     line-height: 1.5;
     color: var(--secondary-color-black);

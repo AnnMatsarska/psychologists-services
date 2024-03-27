@@ -1,21 +1,21 @@
 .list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-end;
-    gap: 1.5rem;
+    justify-content: center;
+    gap: 24px;
 
     @media screen and (max-width: 768px) {
-        gap: 0.625rem;
+        gap: 10px;
     }
 }
 
 .linkItem {
-    padding: 0.875rem 2.437rem;
+    padding: 14px 39px;
     background-color: transparent;
     border: 1px solid rgba(25, 26, 21, 0.2);
     border-radius: 30px;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 16px;
     font-weight: 500;
     line-height: 1.25;
     color: var(--secondary-color-black);
@@ -30,7 +30,7 @@
 }
 
 .active {
-    padding: 0.875rem 2.437rem;
+    padding: 14px 39px;
     background-color: var(--primary-color-green);
     border-radius: 30px;
     border: 1px solid transparent;
