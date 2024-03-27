@@ -4,7 +4,7 @@
 
 ![Authenticated psychologist page screenshot](./src/images/listpage.jpg)
 
-## Project Description: Psychologist Services Application
+## Project Description
 
 This project entails creating a web application for accessing psychologist
 services. It offers users the ability to browse through a curated list of
@@ -43,12 +43,17 @@ comprises three main pages: Home, Psychologists, and Favorites.
 ## Technologies used in the project
 
 `JavaScript` `React` `React Router` `ReduxToolkit` `ReduxPersist` `Firebase`
-`HTML/CSS` `Formik & Yup` `React Toastify`
+`HTML/CSS` `Formik & Yup` `React Toastify` `Responsive design`
 
 ## Demo
 
 You can access the live demo of the application
 [here](https://annmatsarska.github.io/psychologists-services/)
+
+## Website layout
+
+You can view the website design here
+[here](https://www.figma.com/file/I5vjNb0NsJOpQRnRpMloSY/Psychologists.Services?type=design&node-id=0-1&mode=design&t=4zfT2zFANRbp1fCK-0)
 
 ## Contributors
 
