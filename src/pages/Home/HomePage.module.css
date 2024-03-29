@@ -52,11 +52,19 @@
     display: block;
     position: relative;
     border-radius: 10px;
-    background-image: url("../../images/home-image-min.webp");
+    background-image: url("../../images/image@1x.jpeg");
     background-position: center bottom;
     background-repeat: no-repeat;
     width: 464px;
     height: 526px;
+
+    @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+        background-image: url("../../images/image@2x.jpg");
+
+    }
 }
 
 .greenWrapper {
