@@ -73,8 +73,14 @@ export const AuthForm = ({ formTitle }) => {
         toast.success(`${user.displayName}, you have successfully logged in!`);
         navigate('/psychologists');
       }
-    } catch {
-      toast.error('Invalid data. Sign in is failed. Please try again.');
+    } catch (error) {
+      if (error.code === 'auth/email-already-in-use') {
+        toast.error(
+          'This email is already in use. Please try with a different email.'
+        );
+      } else {
+        toast.error('Invalid data. Sign in is failed. Please try again.');
+      }
     }
 
     resetForm();
