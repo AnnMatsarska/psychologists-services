@@ -1,5 +1,10 @@
 # "Psychologists.Services" - The road to the depths of the human soul
 
+**This is the the version of the project written in JavaScript.**
+
+**You can find the TypeScript version**
+[here](https://github.com/AnnMatsarska/psychologists-services)
+
 ![Main page screenshot](./src/images/home.jpg)
 
 ![Authenticated psychologist page screenshot](./src/images/listpage.jpg)
@@ -52,7 +57,7 @@ You can access the live demo of the application
 
 ## Website layout
 
-You can view the website design here
+You can view the website design
 [here](https://www.figma.com/file/I5vjNb0NsJOpQRnRpMloSY/Psychologists.Services?type=design&node-id=0-1&mode=design&t=4zfT2zFANRbp1fCK-0)
 
 ## Contributors
